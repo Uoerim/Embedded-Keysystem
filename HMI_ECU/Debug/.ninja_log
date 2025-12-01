@@ -1,1 +1,27 @@
 # ninja log v5
+7	761	7863272542271077	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/MCAL/SysTick.o	2af6569be9608c0e
+1	77	7863273257823419	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/MCAL/GPIO.o	4fec2dfde97dd14d
+1	80	7863306536265650	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/APP/main.o	dbfce6dbaf5649bf
+83	690	7863306542307502	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Exe/HMI_ECU.out	10512a1d0f3bca75
+1	187	7863308556365615	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/APP/main.o	dbfce6dbaf5649bf
+190	220	7863308556746506	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Exe/HMI_ECU.out	10512a1d0f3bca75
+2	77	7863308717537571	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/APP/main.o	dbfce6dbaf5649bf
+81	112	7863308717908347	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Exe/HMI_ECU.out	10512a1d0f3bca75
+1	151	7863313962915574	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/APP/main.o	dbfce6dbaf5649bf
+6	261	7863313964030796	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/MCAL/GPIO.o	4fec2dfde97dd14d
+265	296	7863313964413421	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Exe/HMI_ECU.out	10512a1d0f3bca75
+1	242	7863333307928640	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/MCAL/I2C.o	622ab7da935c8bf6
+5	246	7863333307968643	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/APP/main.o	dbfce6dbaf5649bf
+250	312	7863333308714329	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Exe/HMI_ECU.out	bf59f3064ac8aa8d
+1	75	7863334958229850	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/APP/main.o	dbfce6dbaf5649bf
+79	111	7863334958632123	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Exe/HMI_ECU.out	bf59f3064ac8aa8d
+1	81	7863335717416314	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/APP/main.o	dbfce6dbaf5649bf
+85	115	7863335717791397	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Exe/HMI_ECU.out	bf59f3064ac8aa8d
+1	161	7863337399597849	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/MCAL/I2C.o	622ab7da935c8bf6
+6	187	7863337399877869	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/HAL/LCD.o	b7532c2c9b254e26
+9	202	7863337399927865	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/APP/main.o	dbfce6dbaf5649bf
+207	248	7863337400513032	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Exe/HMI_ECU.out	8686923a351efb80
+2	73	7863339015447681	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/APP/main.o	dbfce6dbaf5649bf
+77	109	7863339015829444	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Exe/HMI_ECU.out	8686923a351efb80
+1	75	7863339184445492	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Obj/APP/main.o	dbfce6dbaf5649bf
+79	109	7863339184815465	D:/Projects/University/Fall 25/Keysystem/HMI_ECU/Debug/Exe/HMI_ECU.out	8686923a351efb80

@@ -1,12 +1,14 @@
 "D:\EWARM\arm\bin\armPROC.dll" 
 
-"D:\EWARM\arm\bin\armSIM2.dll" 
+"D:\EWARM\arm\bin\armLMIFTDI.dll" 
 
 "D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\Exe\HMI_ECU.out" 
 
 --plugin="D:\EWARM\arm\bin\armbat.dll" 
 
 --device_macro="D:\EWARM\arm\config\debugger\TexasInstruments\TM4C123.dmac" 
+
+--flash_loader="D:\EWARM\arm\config\flashloader\TexasInstruments\FlashTC4_E6_o.board" 
 
 
 

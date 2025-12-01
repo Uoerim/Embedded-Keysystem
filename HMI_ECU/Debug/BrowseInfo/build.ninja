@@ -25,17 +25,66 @@ rule PDBLINK
 
 #Build steps
 build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.xcl : COMPILER_XCL 
-  xclcommand = -source_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\main.c" -xcl_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.xcl" -macro_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.tmp" -icc_path D$:\EWARM\arm\bin\iccarm.exe
-  flags = "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\main.c" -o "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\Obj\APP" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\EWARM\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.tmp"
+  xclcommand = -source_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\APP\main.c" -xcl_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.xcl" -macro_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.tmp" -icc_path D$:\EWARM\arm\bin\iccarm.exe
+  flags = "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\APP\main.c" -o "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\Obj\APP" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\EWARM\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\TivaWare_C_Series-2.2.0.295\inc\ -Ol --predef_macros "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.tmp"
   rspfile_name = D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.xcl.rsp
 
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\HAL\LCD.c" -xcl_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.xcl" -macro_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.tmp" -icc_path D$:\EWARM\arm\bin\iccarm.exe
+  flags = "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\HAL\LCD.c" -o "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\Obj\HAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\EWARM\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\TivaWare_C_Series-2.2.0.295\inc\ -Ol --predef_macros "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.tmp"
+  rspfile_name = D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.xcl.rsp
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\GPIO.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\MCAL\GPIO.c" -xcl_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\GPIO.xcl" -macro_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\GPIO.tmp" -icc_path D$:\EWARM\arm\bin\iccarm.exe
+  flags = "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\MCAL\GPIO.c" -o "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\Obj\MCAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\EWARM\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\TivaWare_C_Series-2.2.0.295\inc\ -Ol --predef_macros "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\GPIO.tmp"
+  rspfile_name = D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\GPIO.xcl.rsp
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\MCAL\I2C.c" -xcl_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.xcl" -macro_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.tmp" -icc_path D$:\EWARM\arm\bin\iccarm.exe
+  flags = "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\MCAL\I2C.c" -o "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\Obj\MCAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\EWARM\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\TivaWare_C_Series-2.2.0.295\inc\ -Ol --predef_macros "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.tmp"
+  rspfile_name = D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.xcl.rsp
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\MCAL\SysTick.c" -xcl_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.xcl" -macro_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.tmp" -icc_path D$:\EWARM\arm\bin\iccarm.exe
+  flags = "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\MCAL\SysTick.c" -o "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\Obj\MCAL" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\EWARM\arm\inc\c\DLib_Config_Normal.h -I C$:\ti\TivaWare_C_Series-2.2.0.295\inc\ -Ol --predef_macros "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.tmp"
+  rspfile_name = D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.xcl.rsp
+
 build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi : INDEXER D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.xcl |  $
-D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\main.c
+D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\APP\main.c
   flags = "-out=D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi" -f "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.xcl"
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.pbi : INDEXER D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.xcl |  $
+D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\HAL\LCD.c
+  flags = "-out=D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.pbi" -f "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.xcl"
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\GPIO.pbi : INDEXER D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\GPIO.xcl |  $
+D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\MCAL\GPIO.c
+  flags = "-out=D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\GPIO.pbi" -f "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\GPIO.xcl"
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.pbi : INDEXER D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.xcl |  $
+D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\MCAL\I2C.c
+  flags = "-out=D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.pbi" -f "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.xcl"
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.pbi : INDEXER D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.xcl |  $
+D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\MCAL\SysTick.c
+  flags = "-out=D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.pbi" -f "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.xcl"
 
 build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbw : MAKEBROWSE D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbd
   flags = "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbd" -output "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbw"
 
-build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbd : PDBLINK D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi
-  flags = -M "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbd" "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi"
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part0.pbi : PDBLINK D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi |  $
+D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.pbi
+  flags = -M "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part0.pbi" "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi" "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.pbi"
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part1.pbi : PDBLINK D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\GPIO.pbi |  $
+D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.pbi
+  flags = -M "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part1.pbi" "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\GPIO.pbi" "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.pbi"
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part2.pbi : PDBLINK D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.pbi
+  flags = -M "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part2.pbi" "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.pbi"
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbd : PDBLINK D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part0.pbi |  $
+D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part1.pbi $
+D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part2.pbi
+  flags = -M "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbd" "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part0.pbi" "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part1.pbi" "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU_part2.pbi"
 

@@ -1,15 +1,15 @@
-"D:\Projects\University\Fall 25\Keysystem\HMI_ECU\APP\main.c"
+"D:\Projects\University\Fall 25\Keysystem\HMI_ECU\MCAL\I2C.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi.dep
+D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.pbi.dep
 -o
-D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi
+D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.pbi
 -I
-D:\Projects\University\Fall 25\Keysystem\HMI_ECU\APP
+D:\Projects\University\Fall 25\Keysystem\HMI_ECU\MCAL
 -I
 C:\ti\TivaWare_C_Series-2.2.0.295\inc
 -I

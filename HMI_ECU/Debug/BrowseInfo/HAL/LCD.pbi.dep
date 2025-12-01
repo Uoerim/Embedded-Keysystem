@@ -1,0 +1,8 @@
+D:\Projects\University\Fall\ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.pbi: \
+  D:\Projects\University\Fall\ 25\Keysystem\HMI_ECU\HAL\LCD.c \
+  D:\EWARM\arm\inc\c\stdint.h D:\EWARM\arm\inc\c\ycheck.h \
+  D:\EWARM\arm\inc\c\yvals.h D:\EWARM\arm\inc\c\DLib_Defaults.h \
+  D:\EWARM\arm\inc\c\DLib_Config_Normal.h \
+  D:\EWARM\arm\inc\c\DLib_Product.h \
+  D:\Projects\University\Fall\ 25\Keysystem\HMI_ECU\HAL/../MCAL/I2C.h \
+  D:\Projects\University\Fall\ 25\Keysystem\HMI_ECU\HAL/LCD.h
