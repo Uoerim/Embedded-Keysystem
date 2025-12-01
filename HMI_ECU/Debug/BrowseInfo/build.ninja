@@ -1,0 +1,41 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = D$:\EWARM\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++D$:\EWARM\common\bin\XclFileGenerator.exe $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = D$:\EWARM\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++D$:\EWARM\common\bin\SourceIndexer.exe $flags
+
+rule MAKEBROWSE
+  command = D$:\EWARM\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++D$:\EWARM\common\bin\makeBrowseData.exe $flags
+
+rule PDBLINK
+  command = D$:\EWARM\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++D$:\EWARM\common\bin\PbdLink.exe $flags
+
+
+
+#Build steps
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\main.c" -xcl_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.xcl" -macro_file "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.tmp" -icc_path D$:\EWARM\arm\bin\iccarm.exe
+  flags = "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\main.c" -o "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\Obj\APP" --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa --no_clustering --no_scheduling --debug --endian=little --cpu=Cortex-M4 -e --fpu=VFPv4_sp --dlib_config D$:\EWARM\arm\inc\c\DLib_Config_Normal.h -Ol --predef_macros "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.tmp"
+  rspfile_name = D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.xcl.rsp
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi : INDEXER D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.xcl |  $
+D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\main.c
+  flags = "-out=D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi" -f "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.xcl"
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbw : MAKEBROWSE D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbd
+  flags = "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbd" -output "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbw"
+
+build D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbd : PDBLINK D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi
+  flags = -M "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HMI_ECU.pbd" "D$:\Projects\University\Fall$ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi"
+
