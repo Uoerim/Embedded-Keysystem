@@ -1,31 +1,38 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.1.308/W64 for ARM                  02/Dec/2025  01:11:58
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  03/Dec/2025  21:54:23
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
-#        D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\Exe\HMI_ECU.out
+#        C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\Exe\HMI_ECU.out
 #    Map file     =
-#        D:\Projects\University\Fall
-#        25\Keysystem\HMI_ECU\Debug\List\HMI_ECU.map
+#        C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\List\HMI_ECU.map
 #    Command line =
-#        -f "D:\Projects\University\Fall
-#        25\Keysystem\HMI_ECU\Debug\Exe\HMI_ECU.out.rsp"
-#        ("D:\Projects\University\Fall
-#        25\Keysystem\HMI_ECU\Debug\Obj\MCAL\GPIO.o"
-#        "D:\Projects\University\Fall
-#        25\Keysystem\HMI_ECU\Debug\Obj\MCAL\I2C.o"
-#        "D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\Obj\HAL\LCD.o"
-#        "D:\Projects\University\Fall
-#        25\Keysystem\HMI_ECU\Debug\Obj\APP\main.o"
-#        "D:\Projects\University\Fall
-#        25\Keysystem\HMI_ECU\Debug\Obj\MCAL\SysTick.o" --no_out_extension -o
-#        "D:\Projects\University\Fall
-#        25\Keysystem\HMI_ECU\Debug\Exe\HMI_ECU.out" --map
-#        "D:\Projects\University\Fall
-#        25\Keysystem\HMI_ECU\Debug\List\HMI_ECU.map" --config
-#        D:\EWARM\arm\config\linker\TexasInstruments\TM4C123GE6.icf
-#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#        -f "C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\Exe\HMI_ECU.out.rsp"
+#        ("C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\HAL\Buzzer.o"
+#        "C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\MCAL\GPIO.o"
+#        "C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\MCAL\I2C.o"
+#        "C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\HAL\keypad.o"
+#        "C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\HAL\LCD.o"
+#        "C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\APP\main.o"
+#        "C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\MCAL\SysTick.o"
+#        --no_out_extension -o "C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\Exe\HMI_ECU.out" --map
+#        "C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem\HMI_ECU\Debug\List\HMI_ECU.map" --config
+#        "C:\Program Files\IAR Systems\Embedded Workbench
+#        9.0\arm\config\linker\TexasInstruments\TM4C123GE6.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale)
 #
 ###############################################################################
 
@@ -70,21 +77,24 @@ No sections matched the following patterns:
   .intvec   ro code          0x0    0x40  vector_table_M.o [6]
                           - 0x40    0x40
 
-"P1":                              0x2b4
+"P1":                              0x4b0
   .text     ro code         0x40   0x138  LCD.o [2]
   .text     ro code        0x178    0xac  I2C.o [3]
-  .text     ro code        0x224    0x2c  main.o [1]
-  .text     ro code        0x250    0x22  fpinit_M.o [5]
-  .text     ro code        0x272     0x2  vectortrap_M.o [6]
-  .text     ro code        0x274    0x1e  cmain.o [6]
-  .text     ro code        0x292     0x4  low_level_init.o [4]
-  .text     ro code        0x296     0x4  exit.o [4]
-  .text     ro code        0x29c     0xa  cexit.o [6]
-  .text     ro code        0x2a8    0x14  exit.o [7]
-  .text     ro code        0x2bc    0x1c  cstartup_M.o [6]
-  .rodata   const          0x2d8    0x10  main.o [1]
-  .rodata   const          0x2e8     0xc  main.o [1]
-                         - 0x2f4   0x2b4
+  .text     ro code        0x224   0x10c  keypad.o [2]
+  .text     ro code        0x330    0x84  Buzzer.o [2]
+  .text     ro code        0x3b4    0x84  main.o [1]
+  .text     ro code        0x438    0x22  fpinit_M.o [5]
+  .text     ro code        0x45a     0x2  vectortrap_M.o [6]
+  .text     ro code        0x45c    0x1e  cmain.o [6]
+  .text     ro code        0x47a     0x4  low_level_init.o [4]
+  .text     ro code        0x47e     0x4  exit.o [4]
+  .text     ro code        0x484     0xa  cexit.o [6]
+  .text     ro code        0x490    0x14  exit.o [7]
+  .text     ro code        0x4a4    0x1c  cstartup_M.o [6]
+  .rodata   const          0x4c0    0x10  keypad.o [2]
+  .rodata   const          0x4d0    0x10  main.o [1]
+  .rodata   const          0x4e0    0x10  main.o [1]
+                         - 0x4f0   0x4b0
 
 "P2":                             0x1000
   CSTACK             0x2000'0000  0x1000  <Block>
@@ -95,7 +105,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-        0x2f4     0x1'ffff  0x1'fd0c
+        0x4f0     0x1'ffff  0x1'fb10
   0x2000'1000  0x2000'7fff    0x7000
 
 
@@ -110,17 +120,19 @@ command line/config:
     -------------------------------------------
     Total:
 
-D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\Obj\APP: [1]
-    main.o                 44       28
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\APP: [1]
+    main.o                132       32
     -------------------------------------------
-    Total:                 44       28
+    Total:                132       32
 
-D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\Obj\HAL: [2]
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\HAL: [2]
+    Buzzer.o              132
     LCD.o                 312
+    keypad.o              268       16
     -------------------------------------------
-    Total:                312
+    Total:                712       16
 
-D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\Obj\MCAL: [3]
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\MCAL: [3]
     I2C.o                 172
     -------------------------------------------
     Total:                172
@@ -153,7 +165,7 @@ shb_l.a: [7]
     Gaps                    4
     Linker created                        4'096
 -----------------------------------------------
-    Grand Total:          728       28    4'096
+    Grand Total:        1'216       48    4'096
 
 
 *******************************************************************************
@@ -162,53 +174,63 @@ shb_l.a: [7]
 
 Entry                     Address  Size  Type      Object
 -----                     -------  ----  ----      ------
-?main                       0x275        Code  Gb  cmain.o [6]
-BusFault_Handler            0x273        Code  Wk  vectortrap_M.o [6]
+?main                       0x45d        Code  Gb  cmain.o [6]
+BusFault_Handler            0x45b        Code  Wk  vectortrap_M.o [6]
+Buzzer_BeepShort            0x38d  0x12  Code  Gb  Buzzer.o [2]
+Buzzer_Init                 0x341  0x30  Code  Gb  Buzzer.o [2]
+Buzzer_Off                  0x37f   0xe  Code  Gb  Buzzer.o [2]
+Buzzer_On                   0x371   0xe  Code  Gb  Buzzer.o [2]
 CSTACK$$Base          0x2000'0000         --   Gb  - Linker created -
 CSTACK$$Limit         0x2000'1000         --   Gb  - Linker created -
-DebugMon_Handler            0x273        Code  Wk  vectortrap_M.o [6]
-HardFault_Handler           0x273        Code  Wk  vectortrap_M.o [6]
+DebugMon_Handler            0x45b        Code  Wk  vectortrap_M.o [6]
+HardFault_Handler           0x45b        Code  Wk  vectortrap_M.o [6]
 I2C0_Init                   0x179  0x62  Code  Gb  I2C.o [3]
 I2C0_WriteByte              0x1db  0x1e  Code  Gb  I2C.o [3]
+Keypad_GetKey               0x28f  0x7e  Code  Gb  keypad.o [2]
+Keypad_Init                 0x235  0x5a  Code  Gb  keypad.o [2]
 LCD_Clear                    0xe3  0x12  Code  Gb  LCD.o [2]
 LCD_Init                    0x113  0x66  Code  Gb  LCD.o [2]
 LCD_SendChar                 0xc1   0xc  Code  Gb  LCD.o [2]
 LCD_SendString               0xcd  0x16  Code  Gb  LCD.o [2]
 LCD_SetCursor                0xf5  0x1e  Code  Gb  LCD.o [2]
-MemManage_Handler           0x273        Code  Wk  vectortrap_M.o [6]
-NMI_Handler                 0x273        Code  Wk  vectortrap_M.o [6]
-PendSV_Handler              0x273        Code  Wk  vectortrap_M.o [6]
+MemManage_Handler           0x45b        Code  Wk  vectortrap_M.o [6]
+NMI_Handler                 0x45b        Code  Wk  vectortrap_M.o [6]
+PendSV_Handler              0x45b        Code  Wk  vectortrap_M.o [6]
 Region$$Table$$Base           0x0         --   Gb  - Linker created -
 Region$$Table$$Limit          0x0         --   Gb  - Linker created -
-SVC_Handler                 0x273        Code  Wk  vectortrap_M.o [6]
-SysTick_Handler             0x273        Code  Wk  vectortrap_M.o [6]
-UsageFault_Handler          0x273        Code  Wk  vectortrap_M.o [6]
-__cmain                     0x275        Code  Gb  cmain.o [6]
-__exit                      0x2a9  0x14  Code  Gb  exit.o [7]
-__iar_init_vfp              0x251        Code  Gb  fpinit_M.o [5]
-__iar_program_start         0x2bd        Code  Gb  cstartup_M.o [6]
-__low_level_init            0x293   0x4  Code  Gb  low_level_init.o [4]
+SVC_Handler                 0x45b        Code  Wk  vectortrap_M.o [6]
+SysTick_Handler             0x45b        Code  Wk  vectortrap_M.o [6]
+UsageFault_Handler          0x45b        Code  Wk  vectortrap_M.o [6]
+__cmain                     0x45d        Code  Gb  cmain.o [6]
+__exit                      0x491  0x14  Code  Gb  exit.o [7]
+__iar_init_vfp              0x439        Code  Gb  fpinit_M.o [5]
+__iar_program_start         0x4a5        Code  Gb  cstartup_M.o [6]
+__low_level_init            0x47b   0x4  Code  Gb  low_level_init.o [4]
 __vector_table                0x0        Data  Gb  vector_table_M.o [6]
-_call_main                  0x281        Code  Gb  cmain.o [6]
-_exit                       0x29d        Code  Gb  cexit.o [6]
-exit                        0x297   0x4  Code  Gb  exit.o [4]
+_call_main                  0x469        Code  Gb  cmain.o [6]
+_exit                       0x485        Code  Gb  cexit.o [6]
+buzzer_delay                0x331  0x10  Code  Lc  Buzzer.o [2]
+delay_small                 0x225  0x10  Code  Lc  keypad.o [2]
+delay_small                 0x3b5  0x10  Code  Lc  main.o [1]
+exit                        0x47f   0x4  Code  Gb  exit.o [4]
+keymap                      0x4c0  0x10  Data  Lc  keypad.o [2]
 lcd_delay                    0x41  0x10  Code  Lc  LCD.o [2]
 lcd_send_byte                0x91  0x24  Code  Lc  LCD.o [2]
 lcd_send_cmd                 0xb5   0xc  Code  Lc  LCD.o [2]
 lcd_write_nibble             0x51  0x40  Code  Lc  LCD.o [2]
-main                        0x225  0x2c  Code  Gb  main.o [1]
+main                        0x3c5  0x66  Code  Gb  main.o [1]
 
 
-[1] = D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\Obj\APP
-[2] = D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\Obj\HAL
-[3] = D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\Obj\MCAL
+[1] = C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\APP
+[2] = C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\HAL
+[3] = C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\Obj\MCAL
 [4] = dl7M_tln.a
 [5] = m7M_tls.a
 [6] = rt7M_tl.a
 [7] = shb_l.a
 
-    728 bytes of readonly  code memory
-     28 bytes of readonly  data memory
+  1'216 bytes of readonly  code memory
+     48 bytes of readonly  data memory
   4'096 bytes of readwrite data memory
 
 Errors: none

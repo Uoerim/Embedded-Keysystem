@@ -1,23 +1,23 @@
-"D:\Projects\University\Fall 25\Keysystem\HMI_ECU\MCAL\I2C.c"
+"C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\MCAL\I2C.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.pbi.dep
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.pbi.dep
 -o
-D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.pbi
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\I2C.pbi
 -I
-D:\Projects\University\Fall 25\Keysystem\HMI_ECU\MCAL
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\MCAL
 -I
 C:\ti\TivaWare_C_Series-2.2.0.295\inc
 -I
-D:\EWARM\arm\inc\c\aarch32
+C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c\aarch32
 -I
-D:\EWARM\arm\inc
+C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc
 -I
-D:\EWARM\arm\inc\c
+C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c
 -I
 C:\ti\TivaWare_C_Series-2.2.0.295\inc
 -D__CHAR_BITS__=8
@@ -319,8 +319,8 @@ C:\ti\TivaWare_C_Series-2.2.0.295\inc
 -D__EDG_FLOAT80_ENABLING_POSSIBLE=0
 -D__EDG_FLOAT128_ENABLING_POSSIBLE=0
 -D__EDG_INT128_EXTENSIONS_ALLOWED=0
--D_DLIB_CONFIG_FILE_HEADER_NAME="D:\EWARM\arm\inc\c\DLib_Config_Normal.h"
--D_DLIB_CONFIG_FILE_STRING="D:\\EWARM\\arm\\inc\\c\\DLib_Config_Normal.h"
+-D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c\DLib_Config_Normal.h"
+-D_DLIB_CONFIG_FILE_STRING="C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Config_Normal.h"
 -D__VERSION__="IAR ANSI C/C++ Compiler V9.10.1.308/W64 for ARM"
 -D_VA_DEFINED=
 -D_VA_LIST=struct __va_list

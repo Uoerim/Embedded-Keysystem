@@ -1,8 +1,10 @@
-D:\Projects\University\Fall\ 25\Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.pbi: \
-  D:\Projects\University\Fall\ 25\Keysystem\HMI_ECU\MCAL\SysTick.c \
-  D:\EWARM\arm\inc\c\stdint.h D:\EWARM\arm\inc\c\ycheck.h \
-  D:\EWARM\arm\inc\c\yvals.h D:\EWARM\arm\inc\c\DLib_Defaults.h \
-  D:\EWARM\arm\inc\c\DLib_Config_Normal.h \
-  D:\EWARM\arm\inc\c\DLib_Product.h \
+C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\SysTick.pbi: \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\MCAL\SysTick.h \
   C:\ti\TivaWare_C_Series-2.2.0.295\inc\TM4C123GH6PM.h \
-  D:\Projects\University\Fall\ 25\Keysystem\HMI_ECU\MCAL/SysTick.h
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\MCAL\SysTick.c

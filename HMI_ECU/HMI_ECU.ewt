@@ -2850,6 +2850,18 @@
     <group>
         <name>HAL</name>
         <file>
+            <name>$PROJ_DIR$\HAL\Buzzer.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\HAL\Buzzer.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\HAL\keypad.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\HAL\keypad.h</name>
+        </file>
+        <file>
             <name>$PROJ_DIR$\HAL\LCD.c</name>
         </file>
         <file>
