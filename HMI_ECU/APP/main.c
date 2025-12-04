@@ -1,42 +1,45 @@
 #include <stdint.h>
 #include "TM4C123GH6PM.h"
 #include "../HAL/LCD.h"
-#include "../HAL/Keypad.h"
-#include "../HAL/Buzzer.h"
-
-
+#include "../MCAL/ADC.h"
 
 static void delay_small(volatile uint32_t t)
 {
-    while (t--) { }
+    while (t--) {}
+}
+
+uint16_t ADC_ReadAverage(uint8_t samples)
+{
+    uint32_t sum = 0;
+    for (uint8_t i = 0; i < samples; i++)
+    {
+        sum += ADC_Read();
+    }
+    return (uint16_t)(sum / samples);
 }
 
 int main(void)
 {
     LCD_Init();
-    Keypad_Init();
-    Buzzer_Init();        // <-- from Buzzer.c
-
-    LCD_Clear();
-    LCD_SetCursor(0, 0);
-    LCD_SendString("Press any key");
+    ADC_Init();
 
     while (1)
     {
-        char k = Keypad_GetKey();
+        uint16_t val = ADC_ReadAverage(16);   // smooth reading
 
-        Buzzer_BeepShort();   // <-- from Buzzer.c
-
-        LCD_Clear();
-        LCD_SetCursor(0, 0);
-        LCD_SendString("You pressed:");
-        LCD_SetCursor(1, 0);
-        LCD_SendChar(k);
-
-        delay_small(300000);
+        if (val < 20) val = 0;                 // remove low-end noise
 
         LCD_Clear();
-        LCD_SetCursor(0, 0);
-        LCD_SendString("Press any key");
+        LCD_SetCursor(0,0);
+        LCD_SendString("Pot value:");
+
+        LCD_SetCursor(1,0);
+
+        // print value
+        char buf[6];
+        sprintf(buf, "%u", val);
+        LCD_SendString(buf);
+
+        delay_small(200000);
     }
 }
