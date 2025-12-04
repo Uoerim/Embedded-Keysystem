@@ -1,23 +1,23 @@
-"C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\HAL\Buzzer.c"
+"D:\Projects\University\Fall 25\Keysystem\HMI_ECU\HAL\Buzzer.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\Buzzer.pbi.dep
+D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\Buzzer.pbi.dep
 -o
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\Buzzer.pbi
+D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\Buzzer.pbi
 -I
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\HAL
+D:\Projects\University\Fall 25\Keysystem\HMI_ECU\HAL
 -I
 C:\ti\TivaWare_C_Series-2.2.0.295\inc
 -I
-C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c\aarch32
+D:\EWARM\arm\inc\c\aarch32
 -I
-C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc
+D:\EWARM\arm\inc
 -I
-C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c
+D:\EWARM\arm\inc\c
 -I
 C:\ti\TivaWare_C_Series-2.2.0.295\inc
 -D__CHAR_BITS__=8
@@ -319,8 +319,8 @@ C:\ti\TivaWare_C_Series-2.2.0.295\inc
 -D__EDG_FLOAT80_ENABLING_POSSIBLE=0
 -D__EDG_FLOAT128_ENABLING_POSSIBLE=0
 -D__EDG_INT128_EXTENSIONS_ALLOWED=0
--D_DLIB_CONFIG_FILE_HEADER_NAME="C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\inc\c\DLib_Config_Normal.h"
--D_DLIB_CONFIG_FILE_STRING="C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Config_Normal.h"
+-D_DLIB_CONFIG_FILE_HEADER_NAME="D:\EWARM\arm\inc\c\DLib_Config_Normal.h"
+-D_DLIB_CONFIG_FILE_STRING="D:\\EWARM\\arm\\inc\\c\\DLib_Config_Normal.h"
 -D__VERSION__="IAR ANSI C/C++ Compiler V9.10.1.308/W64 for ARM"
 -D_VA_DEFINED=
 -D_VA_LIST=struct __va_list

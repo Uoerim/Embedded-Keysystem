@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\settings\HMI_ECU.Debug.general.xcl" --backend -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\settings\HMI_ECU.Debug.driver.xcl" 
+"D:\EWARM\common\bin\cspybat" -f "D:\Projects\University\Fall 25\Keysystem\HMI_ECU\settings\HMI_ECU.Debug.general.xcl" --backend -f "D:\Projects\University\Fall 25\Keysystem\HMI_ECU\settings\HMI_ECU.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\settings\HMI_ECU.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\settings\HMI_ECU.Debug.driver.xcl" 
+"D:\EWARM\common\bin\cspybat" -f "D:\Projects\University\Fall 25\Keysystem\HMI_ECU\settings\HMI_ECU.Debug.general.xcl" "--debug_file=%~1" --backend -f "D:\Projects\University\Fall 25\Keysystem\HMI_ECU\settings\HMI_ECU.Debug.driver.xcl" 
 
 @echo off 
 :end
