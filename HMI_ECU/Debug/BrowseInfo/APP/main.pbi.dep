@@ -1,4 +1,7 @@
 C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi: \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\APP\..\MCAL\UART.h \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\APP\..\MCAL\SysTick.h \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\APP\..\MCAL\ADC.h \
   C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\APP\..\HAL\Buzzer.h \
   C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\APP\..\HAL\Keypad.h \
   C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\APP\..\HAL\LCD.h \

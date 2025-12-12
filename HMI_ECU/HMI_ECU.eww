@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workspace>
     <project>
+        <path>$WS_DIR$\..\Control_ECU\Control_ECU.ewp</path>
+    </project>
+    <project>
         <path>$WS_DIR$\HMI_ECU.ewp</path>
     </project>
     <batchBuild />
