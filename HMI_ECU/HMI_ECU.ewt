@@ -2894,11 +2894,5 @@
         <file>
             <name>$PROJ_DIR$\MCAL\SysTick.h</name>
         </file>
-        <file>
-            <name>$PROJ_DIR$\MCAL\UART.c</name>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\MCAL\UART.h</name>
-        </file>
     </group>
 </project>

@@ -1,14 +1,14 @@
-"C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\bin\armPROC.dll" 
+"D:\EWARM\arm\bin\armPROC.dll" 
 
-"C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\bin\armLMIFTDI.dll" 
+"D:\EWARM\arm\bin\armLMIFTDI.dll" 
 
-"C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\Exe\HMI_ECU.out" 
+"D:\Projects\University\Fall 25\Keysystem\HMI_ECU\Debug\Exe\HMI_ECU.out" 
 
---plugin="C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\bin\armbat.dll" 
+--plugin="D:\EWARM\arm\bin\armbat.dll" 
 
---device_macro="C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\config\debugger\TexasInstruments\TM4C123.dmac" 
+--device_macro="D:\EWARM\arm\config\debugger\TexasInstruments\TM4C123.dmac" 
 
---flash_loader="C:\Program Files\IAR Systems\Embedded Workbench 9.0\arm\config\flashloader\TexasInstruments\FlashTC4_E6_o.board" 
+--flash_loader="D:\EWARM\arm\config\flashloader\TexasInstruments\FlashTC4_E6_o.board" 
 
 
 
