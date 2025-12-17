@@ -1,10 +1,10 @@
-C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.pbi: \
-  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\HAL\LCD.h \
-  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\HAL\..\MCAL\I2C.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
-  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.pbi: \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\HAL\LCD.c \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
-  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem\HMI_ECU\HAL\LCD.c
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\HAL/../MCAL/I2C.h \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\HAL/LCD.h

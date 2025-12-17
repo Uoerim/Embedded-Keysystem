@@ -2855,6 +2855,12 @@
         <file>
             <name>$PROJ_DIR$\HAL\Motor.h</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\HAL\RGB_LED.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\HAL\RGB_LED.h</name>
+        </file>
     </group>
     <group>
         <name>MCAL</name>

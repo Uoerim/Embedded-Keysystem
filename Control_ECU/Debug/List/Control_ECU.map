@@ -1,29 +1,31 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.1.308/W64 for ARM                  11/Dec/2025  22:19:24
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  16/Dec/2025  21:45:57
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
 #        C:\Users\moham\OneDrive\Desktop\Embedded
-#        Project\Embedded-Keysystem\Control_ECU\Debug\Exe\Control_ECU.out
+#        Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Exe\Control_ECU.out
 #    Map file     =
 #        C:\Users\moham\OneDrive\Desktop\Embedded
-#        Project\Embedded-Keysystem\Control_ECU\Debug\List\Control_ECU.map
+#        Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\List\Control_ECU.map
 #    Command line =
 #        -f "C:\Users\moham\OneDrive\Desktop\Embedded
-#        Project\Embedded-Keysystem\Control_ECU\Debug\Exe\Control_ECU.out.rsp"
+#        Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Exe\Control_ECU.out.rsp"
 #        ("C:\Users\moham\OneDrive\Desktop\Embedded
-#        Project\Embedded-Keysystem\Control_ECU\Debug\Obj\MCAL\EEPROM.o"
+#        Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Obj\MCAL\EEPROM.o"
 #        "C:\Users\moham\OneDrive\Desktop\Embedded
-#        Project\Embedded-Keysystem\Control_ECU\Debug\Obj\APP\main.o"
+#        Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Obj\APP\main.o"
 #        "C:\Users\moham\OneDrive\Desktop\Embedded
-#        Project\Embedded-Keysystem\Control_ECU\Debug\Obj\HAL\Motor.o"
+#        Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Obj\HAL\Motor.o"
 #        "C:\Users\moham\OneDrive\Desktop\Embedded
-#        Project\Embedded-Keysystem\Control_ECU\Debug\Obj\MCAL\UART.o"
+#        Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Obj\HAL\RGB_LED.o"
+#        "C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Obj\MCAL\UART.o"
 #        --no_out_extension -o "C:\Users\moham\OneDrive\Desktop\Embedded
-#        Project\Embedded-Keysystem\Control_ECU\Debug\Exe\Control_ECU.out"
+#        Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Exe\Control_ECU.out"
 #        --map "C:\Users\moham\OneDrive\Desktop\Embedded
-#        Project\Embedded-Keysystem\Control_ECU\Debug\List\Control_ECU.map"
+#        Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\List\Control_ECU.map"
 #        --config "C:\Program Files\IAR Systems\Embedded Workbench
 #        9.0\arm\config\linker\TexasInstruments\TM4C123BH6.icf" --semihosting
 #        --entry __iar_program_start --vfe --text_out locale)
@@ -67,25 +69,25 @@ initialize by copy { rw };
   .intvec            ro code          0x0    0x40  vector_table_M.o [6]
                                    - 0x40    0x40
 
-"P1":                                       0x6e4
-  .text              ro code         0x40   0x2fc  main.o [1]
-  .text              ro code        0x33c   0x104  UART.o [3]
-  .text              ro code        0x440   0x138  EEPROM.o [3]
-  .text              ro code        0x578    0xb0  Motor.o [2]
-  .text              ro code        0x628    0x2a  copy_init3.o [6]
-  .text              ro code        0x652     0x2  vectortrap_M.o [6]
-  .text              ro code        0x654    0x28  data_init.o [6]
-  .text              ro code        0x67c    0x22  fpinit_M.o [5]
-  .iar.init_table    const          0x6a0    0x14  - Linker created -
-  .text              ro code        0x6b4    0x1e  cmain.o [6]
-  .text              ro code        0x6d2     0x4  low_level_init.o [4]
-  .text              ro code        0x6d6     0x4  exit.o [4]
-  .text              ro code        0x6dc     0xa  cexit.o [6]
-  .text              ro code        0x6e8    0x14  exit.o [7]
-  .text              ro code        0x6fc    0x1c  cstartup_M.o [6]
-  Initializer bytes  const          0x718     0xc  <for P2-1>
-  .rodata            const          0x724     0x0  copy_init3.o [6]
-                                  - 0x724   0x6e4
+"P1":                                       0x7f0
+  .text              ro code         0x40   0x408  main.o [1]
+  .text              ro code        0x448   0x104  UART.o [3]
+  .text              ro code        0x54c   0x138  EEPROM.o [3]
+  .text              ro code        0x684    0xb0  Motor.o [2]
+  .text              ro code        0x734    0x2a  copy_init3.o [6]
+  .text              ro code        0x75e     0x2  vectortrap_M.o [6]
+  .text              ro code        0x760    0x28  data_init.o [6]
+  .text              ro code        0x788    0x22  fpinit_M.o [5]
+  .iar.init_table    const          0x7ac    0x14  - Linker created -
+  .text              ro code        0x7c0    0x1e  cmain.o [6]
+  .text              ro code        0x7de     0x4  low_level_init.o [4]
+  .text              ro code        0x7e2     0x4  exit.o [4]
+  .text              ro code        0x7e8     0xa  cexit.o [6]
+  .text              ro code        0x7f4    0x14  exit.o [7]
+  .text              ro code        0x808    0x1c  cstartup_M.o [6]
+  Initializer bytes  const          0x824     0xc  <for P2-1>
+  .rodata            const          0x830     0x0  copy_init3.o [6]
+                                  - 0x830   0x7f0
 
 "P2", part 1 of 2:                            0xc
   P2-1                        0x2000'0000     0xa  <Init block>
@@ -103,7 +105,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-        0x724     0x3'ffff  0x3'f8dc
+        0x830     0x3'ffff  0x3'f7d0
   0x2000'000c  0x2000'000f       0x4
   0x2000'1010  0x2000'7fff    0x6ff0
 
@@ -116,7 +118,7 @@ Unused ranges:
           -------      ----
 Copy (__iar_copy_init3)
     1 source range, total size 0xc (120% of destination):
-                0x718   0xc
+                0x824   0xc
     1 destination range, total size 0xa:
           0x2000'0000   0xa
 
@@ -132,17 +134,17 @@ command line/config:
     -------------------------------------------
     Total:
 
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\Debug\Obj\APP: [1]
-    main.o                764       10       10
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Obj\APP: [1]
+    main.o              1'032       10       10
     -------------------------------------------
-    Total:                764       10       10
+    Total:              1'032       10       10
 
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\Debug\Obj\HAL: [2]
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Obj\HAL: [2]
     Motor.o               176
     -------------------------------------------
     Total:                176
 
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\Debug\Obj\MCAL: [3]
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Obj\MCAL: [3]
     EEPROM.o              312
     UART.o                260
     -------------------------------------------
@@ -178,7 +180,7 @@ shb_l.a: [7]
     Gaps                    4        2
     Linker created                  22    4'096
 -----------------------------------------------
-    Grand Total:        1'794       34    4'106
+    Grand Total:        2'062       34    4'106
 
 
 *******************************************************************************
@@ -187,73 +189,72 @@ shb_l.a: [7]
 
 Entry                       Address   Size  Type      Object
 -----                       -------   ----  ----      ------
-.iar.init_table$$Base         0x6a0          --   Gb  - Linker created -
-.iar.init_table$$Limit        0x6b4          --   Gb  - Linker created -
-?main                         0x6b5         Code  Gb  cmain.o [6]
-BusFault_Handler              0x653         Code  Wk  vectortrap_M.o [6]
+.iar.init_table$$Base         0x7ac          --   Gb  - Linker created -
+.iar.init_table$$Limit        0x7c0          --   Gb  - Linker created -
+?main                         0x7c1         Code  Gb  cmain.o [6]
+BusFault_Handler              0x75f         Code  Wk  vectortrap_M.o [6]
 CSTACK$$Base            0x2000'0010          --   Gb  - Linker created -
 CSTACK$$Limit           0x2000'1010          --   Gb  - Linker created -
-DebugMon_Handler              0x653         Code  Wk  vectortrap_M.o [6]
-EEPROM0_Init                  0x44b   0x1c  Code  Gb  EEPROM.o [3]
-EEPROM_Clear                  0x56d    0xc  Code  Gb  EEPROM.o [3]
-EEPROM_Load                   0x493   0x72  Code  Gb  EEPROM.o [3]
-EEPROM_Save                   0x505   0x4a  Code  Gb  EEPROM.o [3]
-Handle_I                       0xdf   0x18  Code  Lc  main.o [1]
-Handle_N                      0x137   0x56  Code  Lc  main.o [1]
-Handle_R                      0x1d5   0x22  Code  Lc  main.o [1]
-Handle_T                      0x18d   0x48  Code  Lc  main.o [1]
-Handle_V                       0xf7   0x40  Code  Lc  main.o [1]
-HardFault_Handler             0x653         Code  Wk  vectortrap_M.o [6]
-LED_Init                       0x51   0x48  Code  Lc  main.o [1]
-LED_Off                        0xa7    0xe  Code  Lc  main.o [1]
-LED_On                         0x99    0xe  Code  Lc  main.o [1]
-MemManage_Handler             0x653         Code  Wk  vectortrap_M.o [6]
-Motor_Close                   0x5ed   0x26  Code  Gb  Motor.o [2]
-Motor_Delay                   0x579   0x10  Code  Lc  Motor.o [2]
-Motor_Init                    0x589   0x30  Code  Gb  Motor.o [2]
-Motor_Open                    0x5c7   0x26  Code  Gb  Motor.o [2]
-Motor_Stop                    0x5b9    0xe  Code  Gb  Motor.o [2]
-NMI_Handler                   0x653         Code  Wk  vectortrap_M.o [6]
-Password_Equals                0xb5   0x2a  Code  Lc  main.o [1]
-PendSV_Handler                0x653         Code  Wk  vectortrap_M.o [6]
-Region$$Table$$Base           0x6a0          --   Gb  - Linker created -
-Region$$Table$$Limit          0x6b4          --   Gb  - Linker created -
-SVC_Handler                   0x653         Code  Wk  vectortrap_M.o [6]
-SysTick_Handler               0x653         Code  Wk  vectortrap_M.o [6]
-UART1_Init                    0x33d   0xaa  Code  Gb  UART.o [3]
-UART1_ReceiveByte             0x3f7   0x10  Code  Gb  UART.o [3]
-UART1_SendByte                0x3e7   0x10  Code  Gb  UART.o [3]
-UsageFault_Handler            0x653         Code  Wk  vectortrap_M.o [6]
-__cmain                       0x6b5         Code  Gb  cmain.o [6]
-__exit                        0x6e9   0x14  Code  Gb  exit.o [7]
-__iar_copy_init3              0x629   0x2a  Code  Gb  copy_init3.o [6]
-__iar_data_init3              0x655   0x28  Code  Gb  data_init.o [6]
-__iar_init_vfp                0x67d         Code  Gb  fpinit_M.o [5]
-__iar_program_start           0x6fd         Code  Gb  cstartup_M.o [6]
-__low_level_init              0x6d3    0x4  Code  Gb  low_level_init.o [4]
+DebugMon_Handler              0x75f         Code  Wk  vectortrap_M.o [6]
+EEPROM0_Init                  0x557   0x1c  Code  Gb  EEPROM.o [3]
+EEPROM_Clear                  0x679    0xc  Code  Gb  EEPROM.o [3]
+EEPROM_Load                   0x59f   0x72  Code  Gb  EEPROM.o [3]
+EEPROM_Save                   0x611   0x4a  Code  Gb  EEPROM.o [3]
+Handle_I                      0x161   0x18  Code  Lc  main.o [1]
+Handle_N                      0x1dd   0x68  Code  Lc  main.o [1]
+Handle_R                      0x2b9   0x48  Code  Lc  main.o [1]
+Handle_T                      0x245   0x74  Code  Lc  main.o [1]
+Handle_V                      0x179   0x64  Code  Lc  main.o [1]
+HardFault_Handler             0x75f         Code  Wk  vectortrap_M.o [6]
+MemManage_Handler             0x75f         Code  Wk  vectortrap_M.o [6]
+Motor_Close                   0x6f9   0x26  Code  Gb  Motor.o [2]
+Motor_Delay                   0x685   0x10  Code  Lc  Motor.o [2]
+Motor_Init                    0x695   0x30  Code  Gb  Motor.o [2]
+Motor_Open                    0x6d3   0x26  Code  Gb  Motor.o [2]
+Motor_Stop                    0x6c5    0xe  Code  Gb  Motor.o [2]
+NMI_Handler                   0x75f         Code  Wk  vectortrap_M.o [6]
+Password_Equals               0x137   0x2a  Code  Lc  main.o [1]
+PendSV_Handler                0x75f         Code  Wk  vectortrap_M.o [6]
+RGB_Init                       0x51   0x48  Code  Lc  main.o [1]
+RGB_Set                        0x99   0x9e  Code  Lc  main.o [1]
+Region$$Table$$Base           0x7ac          --   Gb  - Linker created -
+Region$$Table$$Limit          0x7c0          --   Gb  - Linker created -
+SVC_Handler                   0x75f         Code  Wk  vectortrap_M.o [6]
+SysTick_Handler               0x75f         Code  Wk  vectortrap_M.o [6]
+UART1_Init                    0x449   0xaa  Code  Gb  UART.o [3]
+UART1_ReceiveByte             0x503   0x10  Code  Gb  UART.o [3]
+UART1_SendByte                0x4f3   0x10  Code  Gb  UART.o [3]
+UsageFault_Handler            0x75f         Code  Wk  vectortrap_M.o [6]
+__cmain                       0x7c1         Code  Gb  cmain.o [6]
+__exit                        0x7f5   0x14  Code  Gb  exit.o [7]
+__iar_copy_init3              0x735   0x2a  Code  Gb  copy_init3.o [6]
+__iar_data_init3              0x761   0x28  Code  Gb  data_init.o [6]
+__iar_init_vfp                0x789         Code  Gb  fpinit_M.o [5]
+__iar_program_start           0x809         Code  Gb  cstartup_M.o [6]
+__low_level_init              0x7df    0x4  Code  Gb  low_level_init.o [4]
 __vector_table                  0x0         Data  Gb  vector_table_M.o [6]
-_call_main                    0x6c1         Code  Gb  cmain.o [6]
-_exit                         0x6dd         Code  Gb  cexit.o [6]
+_call_main                    0x7cd         Code  Gb  cmain.o [6]
+_exit                         0x7e9         Code  Gb  cexit.o [6]
 delay                          0x41   0x10  Code  Lc  main.o [1]
-ee_read_word                  0x467   0x16  Code  Lc  EEPROM.o [3]
-ee_write_word                 0x47d   0x16  Code  Lc  EEPROM.o [3]
-eeprom_wait_ready             0x441    0xa  Code  Lc  EEPROM.o [3]
-exit                          0x6d7    0x4  Code  Gb  exit.o [4]
+ee_read_word                  0x573   0x16  Code  Lc  EEPROM.o [3]
+ee_write_word                 0x589   0x16  Code  Lc  EEPROM.o [3]
+eeprom_wait_ready             0x54d    0xa  Code  Lc  EEPROM.o [3]
+exit                          0x7e3    0x4  Code  Gb  exit.o [4]
 g_initialized           0x2000'0009    0x1  Data  Lc  main.o [1]
 g_password              0x2000'0000    0x8  Data  Lc  main.o [1]
 g_timeout_seconds       0x2000'0008    0x1  Data  Lc  main.o [1]
-main                          0x1f7  0x116  Code  Gb  main.o [1]
+main                          0x301  0x116  Code  Gb  main.o [1]
 
 
-[1] = C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\Debug\Obj\APP
-[2] = C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\Debug\Obj\HAL
-[3] = C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\Debug\Obj\MCAL
+[1] = C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Obj\APP
+[2] = C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Obj\HAL
+[3] = C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\Obj\MCAL
 [4] = dl7M_tln.a
 [5] = m7M_tls.a
 [6] = rt7M_tl.a
 [7] = shb_l.a
 
-  1'794 bytes of readonly  code memory
+  2'062 bytes of readonly  code memory
      34 bytes of readonly  data memory
   4'106 bytes of readwrite data memory
 

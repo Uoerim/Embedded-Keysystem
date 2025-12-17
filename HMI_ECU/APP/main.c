@@ -9,8 +9,8 @@
 #include "../MCAL/SysTick.h"
 #include "../MCAL/UART.h"
 
-#define PASSWORD_LENGTH    5
-#define MAX_ATTEMPTS       3
+#define PASSWORD_LENGTH    5u
+#define MAX_ATTEMPTS       3u
 
 static uint8_t g_timeout_seconds = 10u;
 
@@ -21,16 +21,16 @@ static void LCD_PrintNumber(uint16_t num)
     char buf[10];
     int i = 0;
 
-    if (num == 0)
+    if (num == 0u)
     {
         LCD_SendChar('0');
         return;
     }
 
-    while (num > 0)
+    while (num > 0u)
     {
         buf[i++] = (char)('0' + (num % 10u));
-        num      = (uint16_t)(num / 10u);
+        num = (uint16_t)(num / 10u);
     }
 
     while (i > 0)
@@ -39,7 +39,7 @@ static void LCD_PrintNumber(uint16_t num)
     }
 }
 
-/* Non-blocking scan for timeout screen */
+/* Non-blocking keypad scan (uses your wiring: rows PD0-3, cols PE1-4) */
 static char Keypad_ScanOnce(void)
 {
     static const char keymap[4][4] =
@@ -77,7 +77,8 @@ static char Keypad_ScanOnce(void)
     return 0;
 }
 
-static void HMI_GetPasswordScreen(const char *title, char *buffer)
+/* A=Confirm, B=Clear all entry, digits accepted */
+static void HMI_GetPasswordScreen(const char *title, char *buffer5)
 {
     uint8_t index = 0u;
 
@@ -95,7 +96,7 @@ static void HMI_GetPasswordScreen(const char *title, char *buffer)
         {
             if (index < PASSWORD_LENGTH)
             {
-                buffer[index++] = k;
+                buffer5[index++] = k;
                 LCD_SendChar('*');
             }
         }
@@ -112,19 +113,21 @@ static void HMI_GetPasswordScreen(const char *title, char *buffer)
             {
                 return;
             }
-            else
-            {
-                LCD_Clear();
-                LCD_SetCursor(0u, 0u);
-                LCD_SendString("Enter 5 digits");
-                SysTick_DelayMs(1300);
 
-                LCD_Clear();
-                LCD_SetCursor(0u, 0u);
-                LCD_SendString(title);
-                LCD_SetCursor(1u, 0u);
-                index = 0u;
-            }
+            LCD_Clear();
+            LCD_SetCursor(0u, 0u);
+            LCD_SendString("Enter 5 digits");
+            SysTick_DelayMs(1200);
+
+            LCD_Clear();
+            LCD_SetCursor(0u, 0u);
+            LCD_SendString(title);
+            LCD_SetCursor(1u, 0u);
+            index = 0u;
+        }
+        else
+        {
+            /* ignore other keys */
         }
     }
 }
@@ -140,7 +143,7 @@ static void HMI_LockoutCountdown(uint8_t seconds)
         LCD_SetCursor(1u, 0u);
         LCD_SendString("Wait: ");
         LCD_PrintNumber(s);
-        LCD_SendString("s ");
+        LCD_SendString("s   ");
 
         Buzzer_BeepShort();
         SysTick_DelayMs(1000);
@@ -149,7 +152,7 @@ static void HMI_LockoutCountdown(uint8_t seconds)
     LCD_Clear();
     LCD_SetCursor(0u, 0u);
     LCD_SendString("Returning...");
-    SysTick_DelayMs(800);
+    SysTick_DelayMs(700);
 }
 
 /* ================== CONTROL HANDSHAKE ================== */
@@ -158,7 +161,6 @@ static uint8_t HMI_IsInitialized(void)
 {
     uint8_t r;
 
-    /* give UART a moment after power-up */
     SysTick_DelayMs(200);
 
     while (1)
@@ -169,13 +171,11 @@ static uint8_t HMI_IsInitialized(void)
         if (r == '0') return 0u;
         if (r == '1') return 1u;
 
-        /* if garbage, wait and retry */
         SysTick_DelayMs(50);
     }
 }
 
-
-/* ================== VERIFY PASSWORD VIA CONTROL ================== */
+/* ================== PASSWORD VERIFY (CONTROL) ================== */
 
 static uint8_t HMI_VerifyPasswordWithAttempts(const char *title)
 {
@@ -187,14 +187,14 @@ static uint8_t HMI_VerifyPasswordWithAttempts(const char *title)
         HMI_GetPasswordScreen(title, entered);
 
         UART1_SendByte('V');
-        for (uint8_t i = 0; i < PASSWORD_LENGTH; i++)
+        for (uint8_t i = 0u; i < PASSWORD_LENGTH; i++)
         {
             UART1_SendByte((uint8_t)entered[i]);
         }
 
         uint8_t reply = UART1_ReceiveByte(); /* Y/N */
 
-        if (reply == 'Y')
+        if (reply == (uint8_t)'Y')
         {
             return 1u;
         }
@@ -205,7 +205,7 @@ static uint8_t HMI_VerifyPasswordWithAttempts(const char *title)
         LCD_SetCursor(0u, 0u);
         LCD_SendString("Wrong Password");
         Buzzer_BeepShort();
-        SysTick_DelayMs(1500);
+        SysTick_DelayMs(1200);
     }
 
     HMI_LockoutCountdown(20u);
@@ -222,47 +222,47 @@ static void HMI_InitialPasswordSetup(void)
     while (1)
     {
         HMI_GetPasswordScreen("Enter Password", first);
-        SysTick_DelayMs(400);
+        SysTick_DelayMs(250);
 
         HMI_GetPasswordScreen("Re-enter Pass", confirm);
 
         uint8_t match = 1u;
-        for (uint8_t i = 0; i < PASSWORD_LENGTH; i++)
+        for (uint8_t i = 0u; i < PASSWORD_LENGTH; i++)
         {
             if (first[i] != confirm[i]) { match = 0u; break; }
         }
 
-        if (!match)
+        if (match == 0u)
         {
             LCD_Clear();
             LCD_SetCursor(0u, 0u);
             LCD_SendString("Mismatch!");
-            for (int i = 0; i < 3; i++)
+            for (uint8_t i = 0u; i < 3u; i++)
             {
                 Buzzer_BeepShort();
-                SysTick_DelayMs(300);
+                SysTick_DelayMs(250);
             }
-            SysTick_DelayMs(1200);
+            SysTick_DelayMs(900);
             continue;
         }
 
         UART1_SendByte('N');
-        for (uint8_t i = 0; i < PASSWORD_LENGTH; i++)
+        for (uint8_t i = 0u; i < PASSWORD_LENGTH; i++)
         {
             UART1_SendByte((uint8_t)first[i]);
         }
 
         uint8_t reply = UART1_ReceiveByte(); /* K */
 
-        if (reply == 'K')
+        if (reply == (uint8_t)'K')
         {
             LCD_Clear();
             LCD_SetCursor(0u, 0u);
             LCD_SendString("Pass Saved");
             Buzzer_On();
-            SysTick_DelayMs(180);
+            SysTick_DelayMs(170);
             Buzzer_Off();
-            SysTick_DelayMs(1300);
+            SysTick_DelayMs(1100);
             return;
         }
 
@@ -270,12 +270,12 @@ static void HMI_InitialPasswordSetup(void)
         LCD_SetCursor(0u, 0u);
         LCD_SendString("Save Error");
         Buzzer_BeepShort();
-        SysTick_DelayMs(1300);
+        SysTick_DelayMs(1200);
     }
 }
 
 /* ================== TIMEOUT SET ================== */
-
+/* Fixed: Send T first, wait K, then verify password (prevents freeze). */
 static void HMI_SetTimeoutUsingPot(void)
 {
     LCD_Clear();
@@ -292,7 +292,7 @@ static void HMI_SetTimeoutUsingPot(void)
         LCD_PrintNumber(timeout);
         LCD_SendString("s   ");
 
-        SysTick_DelayMs(100);
+        SysTick_DelayMs(120);
 
         char k = Keypad_ScanOnce();
         if (k == 0) { continue; }
@@ -301,25 +301,44 @@ static void HMI_SetTimeoutUsingPot(void)
 
         if (k == 'A')
         {
+            /* 1) Send timeout to Control */
+            UART1_SendByte('T');
+            UART1_SendByte((uint8_t)('0' + (timeout / 10u)));
+            UART1_SendByte((uint8_t)('0' + (timeout % 10u)));
+
+            uint8_t r = UART1_ReceiveByte(); /* K */
+            if (r != (uint8_t)'K')
+            {
+                LCD_Clear();
+                LCD_SetCursor(0u, 0u);
+                LCD_SendString("Timeout Err");
+                Buzzer_BeepShort();
+                SysTick_DelayMs(1200);
+                return;
+            }
+
+            /* 2) Verify password (3 tries) */
             if (HMI_VerifyPasswordWithAttempts("Enter Password"))
             {
                 g_timeout_seconds = timeout;
 
-                UART1_SendByte('T');
-                UART1_SendByte((uint8_t)('0' + (timeout / 10u)));
-                UART1_SendByte((uint8_t)('0' + (timeout % 10u)));
-
-                uint8_t reply = UART1_ReceiveByte(); /* K */
-
                 LCD_Clear();
                 LCD_SetCursor(0u, 0u);
-                LCD_SendString((reply == 'K') ? "Timeout Saved" : "Timeout Err");
-
+                LCD_SendString("Timeout Saved");
                 Buzzer_On();
                 SysTick_DelayMs(150);
                 Buzzer_Off();
-                SysTick_DelayMs(1400);
+                SysTick_DelayMs(1200);
             }
+            else
+            {
+                LCD_Clear();
+                LCD_SetCursor(0u, 0u);
+                LCD_SendString("Wrong Password");
+                Buzzer_BeepShort();
+                SysTick_DelayMs(1200);
+            }
+
             return;
         }
         else if (k == 'B')
@@ -327,8 +346,12 @@ static void HMI_SetTimeoutUsingPot(void)
             LCD_Clear();
             LCD_SetCursor(0u, 0u);
             LCD_SendString("Canceled");
-            SysTick_DelayMs(900);
+            SysTick_DelayMs(800);
             return;
+        }
+        else
+        {
+            /* ignore */
         }
     }
 }
@@ -348,7 +371,7 @@ static void HMI_OpenDoorFlow(void)
     LCD_SetCursor(0u, 0u);
     LCD_SendString("Door Unlocking");
     Buzzer_BeepShort();
-    SysTick_DelayMs(1500);
+    SysTick_DelayMs(1200);
 
     for (uint8_t s = g_timeout_seconds; s > 0u; s--)
     {
@@ -370,7 +393,7 @@ static void HMI_OpenDoorFlow(void)
     LCD_SetCursor(0u, 0u);
     LCD_SendString("Relocking Door");
     Buzzer_BeepShort();
-    SysTick_DelayMs(2000);
+    SysTick_DelayMs(1500);
 }
 
 /* ================== CHANGE PASSWORD ================== */
@@ -388,28 +411,28 @@ static void HMI_ChangePassword(void)
     while (1)
     {
         HMI_GetPasswordScreen("Enter New Pass", first);
-        SysTick_DelayMs(400);
+        SysTick_DelayMs(250);
 
         HMI_GetPasswordScreen("Re-enter Pass", confirm);
 
         uint8_t match = 1u;
-        for (uint8_t i = 0; i < PASSWORD_LENGTH; i++)
+        for (uint8_t i = 0u; i < PASSWORD_LENGTH; i++)
         {
             if (first[i] != confirm[i]) { match = 0u; break; }
         }
 
-        if (!match)
+        if (match == 0u)
         {
             LCD_Clear();
             LCD_SetCursor(0u, 0u);
             LCD_SendString("Mismatch!");
             Buzzer_BeepShort();
-            SysTick_DelayMs(1300);
+            SysTick_DelayMs(1100);
             continue;
         }
 
         UART1_SendByte('N');
-        for (uint8_t i = 0; i < PASSWORD_LENGTH; i++)
+        for (uint8_t i = 0u; i < PASSWORD_LENGTH; i++)
         {
             UART1_SendByte((uint8_t)first[i]);
         }
@@ -418,10 +441,9 @@ static void HMI_ChangePassword(void)
 
         LCD_Clear();
         LCD_SetCursor(0u, 0u);
-        LCD_SendString((reply == 'K') ? "Pass Changed" : "Change Error");
+        LCD_SendString((reply == (uint8_t)'K') ? "Pass Changed" : "Change Error");
         Buzzer_BeepShort();
-        SysTick_DelayMs(1200);
-
+        SysTick_DelayMs(1100);
         return;
     }
 }
@@ -439,18 +461,18 @@ static void HMI_ResetSystem(void)
     uint8_t reply = UART1_ReceiveByte(); /* K */
 
     LCD_Clear();
-    if (reply == 'K')
+    if (reply == (uint8_t)'K')
     {
         g_timeout_seconds = 10u;
 
         LCD_SetCursor(0u, 0u);
         LCD_SendString("System Reset");
         Buzzer_On();
-        SysTick_DelayMs(180);
+        SysTick_DelayMs(170);
         Buzzer_Off();
-        SysTick_DelayMs(1200);
+        SysTick_DelayMs(900);
 
-        /* After reset, force new password setup */
+        /* Force new password setup */
         HMI_InitialPasswordSetup();
     }
     else
@@ -458,7 +480,7 @@ static void HMI_ResetSystem(void)
         LCD_SetCursor(0u, 0u);
         LCD_SendString("Reset Error");
         Buzzer_BeepShort();
-        SysTick_DelayMs(1300);
+        SysTick_DelayMs(1200);
     }
 }
 
@@ -496,14 +518,24 @@ static void HMI_MainMenu(void)
         char k = Keypad_GetKey();
         Buzzer_BeepShort();
 
-        if (k == 'C') { selected = (MenuId)((selected + 1u) % MENU_COUNT); }
-        else if (k == 'D') { selected = (MenuId)((selected + MENU_COUNT - 1u) % MENU_COUNT); }
+        if (k == 'C')
+        {
+            selected = (MenuId)((selected + 1u) % MENU_COUNT);
+        }
+        else if (k == 'D')
+        {
+            selected = (MenuId)((selected + MENU_COUNT - 1u) % MENU_COUNT);
+        }
         else if (k == 'A')
         {
-            if (selected == MENU_OPEN)      { HMI_OpenDoorFlow(); }
-            else if (selected == MENU_CHANGE){ HMI_ChangePassword(); }
-            else if (selected == MENU_TIMEOUT){ HMI_SetTimeoutUsingPot(); }
-            else if (selected == MENU_RESET) { HMI_ResetSystem(); }
+            if      (selected == MENU_OPEN)    { HMI_OpenDoorFlow(); }
+            else if (selected == MENU_CHANGE)  { HMI_ChangePassword(); }
+            else if (selected == MENU_TIMEOUT) { HMI_SetTimeoutUsingPot(); }
+            else if (selected == MENU_RESET)   { HMI_ResetSystem(); }
+        }
+        else
+        {
+            /* ignore */
         }
     }
 }
@@ -519,7 +551,7 @@ int main(void)
     SysTick_Init();
     UART1_Init(9600);
 
-    /* Force initial setup if Control ECU isn't initialized */
+    /* If Control ECU not initialized -> do first-run setup */
     if (HMI_IsInitialized() == 0u)
     {
         HMI_InitialPasswordSetup();
