@@ -1,15 +1,15 @@
-"C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\HAL\LCD.c"
+"C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\HAL\LCD.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.pbi.dep
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.pbi.dep
 -o
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.pbi
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\HAL\LCD.pbi
 -I
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\HAL
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\HAL
 -I
 C:\ti\TivaWare_C_Series-2.2.0.295\inc
 -I

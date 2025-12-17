@@ -94211,381 +94211,579 @@
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@1169@macro@_DLIB_DEFAULTS_H",
+    "ID": "c:main.c@195@macro@PASSWORD_LENGTH",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "_DLIB_DEFAULTS_H",
+    "display": "PASSWORD_LENGTH",
     "location": {
       "column": "9",
-      "line": "31",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "line": "9",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "_DLIB_DEFAULTS_H",
-    "origin": "system_include",
+    "name": "PASSWORD_LENGTH",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@3035@macro@_DLIB_FILE_DESCRIPTOR",
+    "ID": "c:main.c@327@macro@RGB_RED_PIN",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "_DLIB_FILE_DESCRIPTOR",
+    "display": "RGB_RED_PIN",
     "location": {
-      "column": "11",
+      "column": "9",
+      "line": "13",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "RGB_RED_PIN",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@373@macro@RGB_GREEN_PIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "RGB_GREEN_PIN",
+    "location": {
+      "column": "9",
+      "line": "14",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "RGB_GREEN_PIN",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@419@macro@RGB_BLUE_PIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "RGB_BLUE_PIN",
+    "location": {
+      "column": "9",
+      "line": "15",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "RGB_BLUE_PIN",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@g_password",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "g_password",
+    "location": {
+      "column": "16",
+      "line": "18",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "g_password",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@g_timeout_seconds",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "g_timeout_seconds",
+    "location": {
+      "column": "16",
+      "line": "19",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "g_timeout_seconds",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@g_initialized",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "g_initialized",
+    "location": {
+      "column": "16",
+      "line": "20",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "g_initialized",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@F@delay",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void delay(volatile uint32_t)",
+    "location": {
+      "column": "13",
+      "line": "23",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "delay",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@EA@RGB_Color_t",
+    "What": "Enum",
+    "defdec": "Def",
+    "display": "",
+    "fields": [
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_OFF",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_OFF",
+        "location": {
+          "column": "5",
+          "line": "27",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+        },
+        "name": "RGB_OFF",
+        "origin": "project_file",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_RED",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_RED",
+        "location": {
+          "column": "5",
+          "line": "28",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+        },
+        "name": "RGB_RED",
+        "origin": "project_file",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_GREEN",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_GREEN",
+        "location": {
+          "column": "5",
+          "line": "29",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+        },
+        "name": "RGB_GREEN",
+        "origin": "project_file",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_BLUE",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_BLUE",
+        "location": {
+          "column": "5",
+          "line": "30",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+        },
+        "name": "RGB_BLUE",
+        "origin": "project_file",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_YELLOW",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_YELLOW",
+        "location": {
+          "column": "5",
+          "line": "31",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+        },
+        "name": "RGB_YELLOW",
+        "origin": "project_file",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_CYAN",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_CYAN",
+        "location": {
+          "column": "5",
+          "line": "32",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+        },
+        "name": "RGB_CYAN",
+        "origin": "project_file",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_MAGENTA",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_MAGENTA",
+        "location": {
+          "column": "5",
+          "line": "33",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+        },
+        "name": "RGB_MAGENTA",
+        "origin": "project_file",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_WHITE",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_WHITE",
+        "location": {
+          "column": "5",
+          "line": "34",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+        },
+        "name": "RGB_WHITE",
+        "origin": "project_file",
+        "scope": null
+      }
+    ],
+    "location": {
+      "column": "9",
+      "line": "25",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@T@RGB_Color_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "enum RGB_Color_t",
+    "location": {
+      "column": "3",
+      "line": "35",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "RGB_Color_t",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@F@RGB_Init",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void RGB_Init(void)",
+    "location": {
+      "column": "13",
+      "line": "37",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "RGB_Init",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@F@RGB_Set",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void RGB_Set(RGB_Color_t)",
+    "location": {
+      "column": "13",
+      "line": "48",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "RGB_Set",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@F@Password_Equals",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "uint8_t Password_Equals(const char *, const char *)",
+    "location": {
+      "column": "16",
+      "line": "67",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "Password_Equals",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@2186@F@Password_Equals@i",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "i",
+    "location": {
+      "column": "18",
+      "line": "69",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "i",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@F@Handle_I",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void Handle_I(void)",
+    "location": {
+      "column": "13",
+      "line": "78",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "Handle_I",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@F@Handle_V",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void Handle_V(void)",
+    "location": {
+      "column": "13",
+      "line": "83",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "Handle_V",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@2489@F@Handle_V@entered",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "entered",
+    "location": {
+      "column": "10",
       "line": "85",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "_DLIB_FILE_DESCRIPTOR",
-    "origin": "system_include",
+    "name": "entered",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@3448@macro@_DLIB_STDOUT_USES_STATIC_BUFFER",
-    "What": "MacroDef",
+    "ID": "c:main.c@2532@F@Handle_V@i",
+    "What": "Variable",
     "defdec": "Def",
-    "display": "_DLIB_STDOUT_USES_STATIC_BUFFER",
+    "display": "i",
     "location": {
-      "column": "11",
-      "line": "100",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "column": "18",
+      "line": "87",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "_DLIB_STDOUT_USES_STATIC_BUFFER",
-    "origin": "system_include",
+    "name": "i",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@4471@macro@_DLIB_FULL_LOCALE_SUPPORT",
-    "What": "MacroDef",
+    "ID": "c:main.c@F@Handle_N",
+    "What": "Function",
     "defdec": "Def",
-    "display": "_DLIB_FULL_LOCALE_SUPPORT",
-    "location": {
-      "column": "11",
-      "line": "127",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_FULL_LOCALE_SUPPORT",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@4649@macro@_DLIB_LOCALE_TABLE_MEMORY",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_LOCALE_TABLE_MEMORY",
-    "location": {
-      "column": "11",
-      "line": "135",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_LOCALE_TABLE_MEMORY",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@5493@macro@_DLIB_FORMATTED_MULTIBYTE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_FORMATTED_MULTIBYTE",
-    "location": {
-      "column": "11",
-      "line": "165",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_FORMATTED_MULTIBYTE",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@6974@macro@_DLIB_PRINTF_MULTIBYTE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_PRINTF_MULTIBYTE",
-    "location": {
-      "column": "11",
-      "line": "213",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_PRINTF_MULTIBYTE",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@7889@macro@_DLIB_PRINTF_INT_TYPE_IS_INT",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_PRINTF_INT_TYPE_IS_INT",
-    "location": {
-      "column": "11",
-      "line": "238",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_PRINTF_INT_TYPE_IS_INT",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@8492@macro@_DLIB_PRINTF_INT_TYPE_IS_LONG",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_PRINTF_INT_TYPE_IS_LONG",
-    "location": {
-      "column": "11",
-      "line": "255",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_PRINTF_INT_TYPE_IS_LONG",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@9338@macro@_DLIB_PRINTF_CHAR_BY_CHAR",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_PRINTF_CHAR_BY_CHAR",
-    "location": {
-      "column": "11",
-      "line": "277",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_PRINTF_CHAR_BY_CHAR",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@10025@macro@_DLIB_SCANF_MULTIBYTE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_SCANF_MULTIBYTE",
-    "location": {
-      "column": "11",
-      "line": "301",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_SCANF_MULTIBYTE",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@10673@macro@_DLIB_STRFTIME_MULTIBYTE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_STRFTIME_MULTIBYTE",
-    "location": {
-      "column": "11",
-      "line": "321",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_STRFTIME_MULTIBYTE",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@11257@macro@_DLIB_QSORT_USE_BUBBLE_SORT",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_QSORT_USE_BUBBLE_SORT",
-    "location": {
-      "column": "11",
-      "line": "340",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_QSORT_USE_BUBBLE_SORT",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@11840@macro@_DLIB_RAND_USE_SIMPLE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_RAND_USE_SIMPLE",
-    "location": {
-      "column": "11",
-      "line": "365",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_RAND_USE_SIMPLE",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@12026@macro@_DLIB_DEBUG_BREAK_FUNCTION_ATTRIBUTE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_DEBUG_BREAK_FUNCTION_ATTRIBUTE",
-    "location": {
-      "column": "11",
-      "line": "374",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_DEBUG_BREAK_FUNCTION_ATTRIBUTE",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@12745@macro@_DLIB_DATA_ATTR",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_DATA_ATTR",
-    "location": {
-      "column": "11",
-      "line": "390",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_DATA_ATTR",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@12836@macro@_DLIB_CONST_ATTR",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_CONST_ATTR",
+    "display": "void Handle_N(void)",
     "location": {
       "column": "13",
-      "line": "395",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "line": "108",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "_DLIB_CONST_ATTR",
-    "origin": "system_include",
+    "name": "Handle_N",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@13453@macro@_DLIB_MBSTATET_USES_UNSIGNED_LONG",
-    "What": "MacroDef",
+    "ID": "c:main.c@3010@F@Handle_N@newPass",
+    "What": "Variable",
     "defdec": "Def",
-    "display": "_DLIB_MBSTATET_USES_UNSIGNED_LONG",
+    "display": "newPass",
     "location": {
-      "column": "15",
-      "line": "421",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "column": "10",
+      "line": "110",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "_DLIB_MBSTATET_USES_UNSIGNED_LONG",
-    "origin": "system_include",
+    "name": "newPass",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@13636@macro@_DLIB_TIME_USES_LONG",
-    "What": "MacroDef",
+    "ID": "c:main.c@3053@F@Handle_N@i",
+    "What": "Variable",
     "defdec": "Def",
-    "display": "_DLIB_TIME_USES_LONG",
+    "display": "i",
     "location": {
-      "column": "15",
-      "line": "429",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "column": "18",
+      "line": "112",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "_DLIB_TIME_USES_LONG",
-    "origin": "system_include",
+    "name": "i",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@14183@macro@_DLIB_AEABI_DIFUNC_CONTAINS_OFFSETS",
-    "What": "MacroDef",
+    "ID": "c:main.c@3170@F@Handle_N@i",
+    "What": "Variable",
     "defdec": "Def",
-    "display": "_DLIB_AEABI_DIFUNC_CONTAINS_OFFSETS",
+    "display": "i",
     "location": {
-      "column": "13",
-      "line": "443",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "column": "18",
+      "line": "117",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "_DLIB_AEABI_DIFUNC_CONTAINS_OFFSETS",
-    "origin": "system_include",
+    "name": "i",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@14573@macro@_DLIB_ONLY_USE_CXA_FUNCTIONS",
-    "What": "MacroDef",
+    "ID": "c:main.c@F@Handle_T",
+    "What": "Function",
     "defdec": "Def",
-    "display": "_DLIB_ONLY_USE_CXA_FUNCTIONS",
-    "location": {
-      "column": "13",
-      "line": "458",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_ONLY_USE_CXA_FUNCTIONS",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@15142@macro@_DLIB_FAST_FMA",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_FAST_FMA",
-    "location": {
-      "column": "11",
-      "line": "485",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
-    },
-    "name": "_DLIB_FAST_FMA",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
-    "ID": "c:DLib_Defaults.h@16042@macro@_DLIB_INCLUDE_DLMALLOC_ALTERNATIVE",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "_DLIB_INCLUDE_DLMALLOC_ALTERNATIVE",
+    "display": "void Handle_T(void)",
     "location": {
       "column": "13",
-      "line": "515",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "line": "139",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "_DLIB_INCLUDE_DLMALLOC_ALTERNATIVE",
-    "origin": "system_include",
+    "name": "Handle_T",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@16406@macro@_DLIB_TIME_ALLOW_64",
-    "What": "MacroDef",
+    "ID": "c:main.c@3626@F@Handle_T@b1",
+    "What": "Variable",
     "defdec": "Def",
-    "display": "_DLIB_TIME_ALLOW_64",
+    "display": "b1",
     "location": {
       "column": "13",
-      "line": "537",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "line": "141",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "_DLIB_TIME_ALLOW_64",
-    "origin": "system_include",
+    "name": "b1",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@16863@macro@_DLIB_ALLOW_LARGE_CONSTANT_TABLES_FOR_MATH",
-    "What": "MacroDef",
+    "ID": "c:main.c@3665@F@Handle_T@val",
+    "What": "Variable",
     "defdec": "Def",
-    "display": "_DLIB_ALLOW_LARGE_CONSTANT_TABLES_FOR_MATH",
+    "display": "val",
     "location": {
-      "column": "11",
-      "line": "562",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "column": "13",
+      "line": "142",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "_DLIB_ALLOW_LARGE_CONSTANT_TABLES_FOR_MATH",
-    "origin": "system_include",
+    "name": "val",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@17263@macro@__WEAK",
-    "What": "MacroDef",
+    "ID": "c:main.c@3751@F@Handle_T@b2",
+    "What": "Variable",
     "defdec": "Def",
-    "display": "__WEAK",
+    "display": "b2",
     "location": {
-      "column": "11",
-      "line": "579",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "column": "17",
+      "line": "146",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "__WEAK",
-    "origin": "system_include",
+    "name": "b2",
+    "origin": "project_file",
     "scope": null
   },
   {
-    "ID": "c:DLib_Defaults.h@17318@macro@__WEAK_DEFS",
-    "What": "MacroDef",
+    "ID": "c:main.c@F@Handle_R",
+    "What": "Function",
     "defdec": "Def",
-    "display": "__WEAK_DEFS",
+    "display": "void Handle_R(void)",
     "location": {
-      "column": "11",
-      "line": "580",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+      "column": "13",
+      "line": "178",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
     },
-    "name": "__WEAK_DEFS",
-    "origin": "system_include",
+    "name": "Handle_R",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@main",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "int main(void)",
+    "location": {
+      "column": "5",
+      "line": "199",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "main",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@4939@F@main@init",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "init",
+    "location": {
+      "column": "17",
+      "line": "208",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "init",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@4967@F@main@t",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "t",
+    "location": {
+      "column": "17",
+      "line": "209",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "t",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@4993@F@main@pass",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "pass",
+    "location": {
+      "column": "14",
+      "line": "210",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "pass",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@5095@F@main@i",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "i",
+    "location": {
+      "column": "26",
+      "line": "214",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "i",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@5546@F@main@cmd",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "cmd",
+    "location": {
+      "column": "17",
+      "line": "235",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+    },
+    "name": "cmd",
+    "origin": "project_file",
     "scope": null
   },
   {
@@ -95009,20 +95207,6 @@
     "scope": null
   },
   {
-    "ID": "c:stdint.h@T@__data_uintptr_t",
-    "What": "Typedef",
-    "defdec": "Def",
-    "display": "unsigned int",
-    "location": {
-      "column": "1",
-      "line": "89",
-      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdint.h"
-    },
-    "name": "__data_uintptr_t",
-    "origin": "system_include",
-    "scope": null
-  },
-  {
     "ID": "c:stdint.h@T@__data_intptr_t",
     "What": "Typedef",
     "defdec": "Def",
@@ -95033,6 +95217,20 @@
       "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdint.h"
     },
     "name": "__data_intptr_t",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:stdint.h@T@__data_uintptr_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "unsigned int",
+    "location": {
+      "column": "1",
+      "line": "89",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\stdint.h"
+    },
+    "name": "__data_uintptr_t",
     "origin": "system_include",
     "scope": null
   },
@@ -95891,423 +96089,381 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@143@macro@PASSWORD_LENGTH",
+    "ID": "c:DLib_Defaults.h@1169@macro@_DLIB_DEFAULTS_H",
     "What": "MacroDef",
     "defdec": "Def",
-    "display": "PASSWORD_LENGTH",
+    "display": "_DLIB_DEFAULTS_H",
     "location": {
       "column": "9",
-      "line": "8",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "PASSWORD_LENGTH",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@g_password",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "g_password",
-    "location": {
-      "column": "16",
-      "line": "10",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "g_password",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@g_timeout_seconds",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "g_timeout_seconds",
-    "location": {
-      "column": "16",
-      "line": "11",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "g_timeout_seconds",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@g_initialized",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "g_initialized",
-    "location": {
-      "column": "16",
-      "line": "12",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "g_initialized",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@F@delay",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void delay(volatile uint32_t)",
-    "location": {
-      "column": "13",
-      "line": "14",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "delay",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@F@LED_Init",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void LED_Init(void)",
-    "location": {
-      "column": "13",
-      "line": "17",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "LED_Init",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@F@LED_On",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void LED_On(void)",
-    "location": {
-      "column": "13",
-      "line": "30",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "LED_On",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@F@LED_Off",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void LED_Off(void)",
-    "location": {
-      "column": "13",
       "line": "31",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "LED_Off",
-    "origin": "project_file",
+    "name": "_DLIB_DEFAULTS_H",
+    "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:main.c@F@Password_Equals",
-    "What": "Function",
+    "ID": "c:DLib_Defaults.h@3035@macro@_DLIB_FILE_DESCRIPTOR",
+    "What": "MacroDef",
     "defdec": "Def",
-    "display": "uint8_t Password_Equals(const char *, const char *)",
+    "display": "_DLIB_FILE_DESCRIPTOR",
     "location": {
-      "column": "16",
-      "line": "33",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "column": "11",
+      "line": "85",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "Password_Equals",
-    "origin": "project_file",
+    "name": "_DLIB_FILE_DESCRIPTOR",
+    "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:main.c@909@F@Password_Equals@i",
-    "What": "Variable",
+    "ID": "c:DLib_Defaults.h@3448@macro@_DLIB_STDOUT_USES_STATIC_BUFFER",
+    "What": "MacroDef",
     "defdec": "Def",
-    "display": "i",
+    "display": "_DLIB_STDOUT_USES_STATIC_BUFFER",
     "location": {
-      "column": "18",
-      "line": "35",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "column": "11",
+      "line": "100",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "i",
-    "origin": "project_file",
+    "name": "_DLIB_STDOUT_USES_STATIC_BUFFER",
+    "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:main.c@F@Handle_I",
-    "What": "Function",
+    "ID": "c:DLib_Defaults.h@4471@macro@_DLIB_FULL_LOCALE_SUPPORT",
+    "What": "MacroDef",
     "defdec": "Def",
-    "display": "void Handle_I(void)",
+    "display": "_DLIB_FULL_LOCALE_SUPPORT",
+    "location": {
+      "column": "11",
+      "line": "127",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_FULL_LOCALE_SUPPORT",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@4649@macro@_DLIB_LOCALE_TABLE_MEMORY",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_LOCALE_TABLE_MEMORY",
+    "location": {
+      "column": "11",
+      "line": "135",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_LOCALE_TABLE_MEMORY",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@5493@macro@_DLIB_FORMATTED_MULTIBYTE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_FORMATTED_MULTIBYTE",
+    "location": {
+      "column": "11",
+      "line": "165",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_FORMATTED_MULTIBYTE",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@6974@macro@_DLIB_PRINTF_MULTIBYTE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_PRINTF_MULTIBYTE",
+    "location": {
+      "column": "11",
+      "line": "213",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_PRINTF_MULTIBYTE",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@7889@macro@_DLIB_PRINTF_INT_TYPE_IS_INT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_PRINTF_INT_TYPE_IS_INT",
+    "location": {
+      "column": "11",
+      "line": "238",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_PRINTF_INT_TYPE_IS_INT",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@8492@macro@_DLIB_PRINTF_INT_TYPE_IS_LONG",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_PRINTF_INT_TYPE_IS_LONG",
+    "location": {
+      "column": "11",
+      "line": "255",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_PRINTF_INT_TYPE_IS_LONG",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@9338@macro@_DLIB_PRINTF_CHAR_BY_CHAR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_PRINTF_CHAR_BY_CHAR",
+    "location": {
+      "column": "11",
+      "line": "277",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_PRINTF_CHAR_BY_CHAR",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@10025@macro@_DLIB_SCANF_MULTIBYTE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_SCANF_MULTIBYTE",
+    "location": {
+      "column": "11",
+      "line": "301",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_SCANF_MULTIBYTE",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@10673@macro@_DLIB_STRFTIME_MULTIBYTE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_STRFTIME_MULTIBYTE",
+    "location": {
+      "column": "11",
+      "line": "321",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_STRFTIME_MULTIBYTE",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@11257@macro@_DLIB_QSORT_USE_BUBBLE_SORT",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_QSORT_USE_BUBBLE_SORT",
+    "location": {
+      "column": "11",
+      "line": "340",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_QSORT_USE_BUBBLE_SORT",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@11840@macro@_DLIB_RAND_USE_SIMPLE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_RAND_USE_SIMPLE",
+    "location": {
+      "column": "11",
+      "line": "365",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_RAND_USE_SIMPLE",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@12026@macro@_DLIB_DEBUG_BREAK_FUNCTION_ATTRIBUTE",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_DEBUG_BREAK_FUNCTION_ATTRIBUTE",
+    "location": {
+      "column": "11",
+      "line": "374",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_DEBUG_BREAK_FUNCTION_ATTRIBUTE",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@12745@macro@_DLIB_DATA_ATTR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_DATA_ATTR",
+    "location": {
+      "column": "11",
+      "line": "390",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_DATA_ATTR",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@12836@macro@_DLIB_CONST_ATTR",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_CONST_ATTR",
     "location": {
       "column": "13",
-      "line": "42",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "line": "395",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "Handle_I",
-    "origin": "project_file",
+    "name": "_DLIB_CONST_ATTR",
+    "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:main.c@F@Handle_V",
-    "What": "Function",
+    "ID": "c:DLib_Defaults.h@13453@macro@_DLIB_MBSTATET_USES_UNSIGNED_LONG",
+    "What": "MacroDef",
     "defdec": "Def",
-    "display": "void Handle_V(void)",
+    "display": "_DLIB_MBSTATET_USES_UNSIGNED_LONG",
+    "location": {
+      "column": "15",
+      "line": "421",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_MBSTATET_USES_UNSIGNED_LONG",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@13636@macro@_DLIB_TIME_USES_LONG",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_TIME_USES_LONG",
+    "location": {
+      "column": "15",
+      "line": "429",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
+    },
+    "name": "_DLIB_TIME_USES_LONG",
+    "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:DLib_Defaults.h@14183@macro@_DLIB_AEABI_DIFUNC_CONTAINS_OFFSETS",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "_DLIB_AEABI_DIFUNC_CONTAINS_OFFSETS",
     "location": {
       "column": "13",
-      "line": "47",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "line": "443",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "Handle_V",
-    "origin": "project_file",
+    "name": "_DLIB_AEABI_DIFUNC_CONTAINS_OFFSETS",
+    "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:main.c@1165@F@Handle_V@entered",
-    "What": "Variable",
+    "ID": "c:DLib_Defaults.h@14573@macro@_DLIB_ONLY_USE_CXA_FUNCTIONS",
+    "What": "MacroDef",
     "defdec": "Def",
-    "display": "entered",
-    "location": {
-      "column": "10",
-      "line": "49",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "entered",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@1206@F@Handle_V@i",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "i",
-    "location": {
-      "column": "18",
-      "line": "50",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "i",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@F@Handle_N",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void Handle_N(void)",
+    "display": "_DLIB_ONLY_USE_CXA_FUNCTIONS",
     "location": {
       "column": "13",
-      "line": "59",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "line": "458",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "Handle_N",
-    "origin": "project_file",
+    "name": "_DLIB_ONLY_USE_CXA_FUNCTIONS",
+    "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:main.c@1481@F@Handle_N@newPass",
-    "What": "Variable",
+    "ID": "c:DLib_Defaults.h@15142@macro@_DLIB_FAST_FMA",
+    "What": "MacroDef",
     "defdec": "Def",
-    "display": "newPass",
+    "display": "_DLIB_FAST_FMA",
     "location": {
-      "column": "10",
-      "line": "61",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "column": "11",
+      "line": "485",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "newPass",
-    "origin": "project_file",
+    "name": "_DLIB_FAST_FMA",
+    "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:main.c@1522@F@Handle_N@i",
-    "What": "Variable",
+    "ID": "c:DLib_Defaults.h@16042@macro@_DLIB_INCLUDE_DLMALLOC_ALTERNATIVE",
+    "What": "MacroDef",
     "defdec": "Def",
-    "display": "i",
-    "location": {
-      "column": "18",
-      "line": "62",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "i",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@1624@F@Handle_N@i",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "i",
-    "location": {
-      "column": "18",
-      "line": "65",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "i",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@F@Handle_T",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void Handle_T(void)",
+    "display": "_DLIB_INCLUDE_DLMALLOC_ALTERNATIVE",
     "location": {
       "column": "13",
-      "line": "76",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "line": "515",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "Handle_T",
-    "origin": "project_file",
+    "name": "_DLIB_INCLUDE_DLMALLOC_ALTERNATIVE",
+    "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:main.c@1885@F@Handle_T@d1",
-    "What": "Variable",
+    "ID": "c:DLib_Defaults.h@16406@macro@_DLIB_TIME_ALLOW_64",
+    "What": "MacroDef",
     "defdec": "Def",
-    "display": "d1",
-    "location": {
-      "column": "10",
-      "line": "78",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "d1",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@1927@F@Handle_T@d2",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "d2",
-    "location": {
-      "column": "10",
-      "line": "79",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "d2",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@1971@F@Handle_T@val",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "val",
+    "display": "_DLIB_TIME_ALLOW_64",
     "location": {
       "column": "13",
-      "line": "81",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "line": "537",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "val",
-    "origin": "project_file",
+    "name": "_DLIB_TIME_ALLOW_64",
+    "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:main.c@F@Handle_R",
-    "What": "Function",
+    "ID": "c:DLib_Defaults.h@16863@macro@_DLIB_ALLOW_LARGE_CONSTANT_TABLES_FOR_MATH",
+    "What": "MacroDef",
     "defdec": "Def",
-    "display": "void Handle_R(void)",
+    "display": "_DLIB_ALLOW_LARGE_CONSTANT_TABLES_FOR_MATH",
     "location": {
-      "column": "13",
-      "line": "93",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "column": "11",
+      "line": "562",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "Handle_R",
-    "origin": "project_file",
+    "name": "_DLIB_ALLOW_LARGE_CONSTANT_TABLES_FOR_MATH",
+    "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:@F@main",
-    "What": "Function",
+    "ID": "c:DLib_Defaults.h@17263@macro@__WEAK",
+    "What": "MacroDef",
     "defdec": "Def",
-    "display": "int main(void)",
+    "display": "__WEAK",
     "location": {
-      "column": "5",
-      "line": "108",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "column": "11",
+      "line": "579",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "main",
-    "origin": "project_file",
+    "name": "__WEAK",
+    "origin": "system_include",
     "scope": null
   },
   {
-    "ID": "c:main.c@2640@F@main@init",
-    "What": "Variable",
+    "ID": "c:DLib_Defaults.h@17318@macro@__WEAK_DEFS",
+    "What": "MacroDef",
     "defdec": "Def",
-    "display": "init",
+    "display": "__WEAK_DEFS",
     "location": {
-      "column": "17",
-      "line": "117",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
+      "column": "11",
+      "line": "580",
+      "path": "C:\\Program Files\\IAR Systems\\Embedded Workbench 9.0\\arm\\inc\\c\\DLib_Defaults.h"
     },
-    "name": "init",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@2640@F@main@t",
-    "What": "Variable",
-    "defdec": "Dec",
-    "display": "t",
-    "location": {
-      "column": "27",
-      "line": "117",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "t",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@2675@F@main@pass",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "pass",
-    "location": {
-      "column": "14",
-      "line": "118",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "pass",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@2777@F@main@i",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "i",
-    "location": {
-      "column": "26",
-      "line": "122",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "i",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@3141@F@main@i",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "i",
-    "location": {
-      "column": "14",
-      "line": "137",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "i",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:main.c@3280@F@main@cmd",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "cmd",
-    "location": {
-      "column": "17",
-      "line": "145",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\APP\\main.c"
-    },
-    "name": "cmd",
-    "origin": "project_file",
+    "name": "__WEAK_DEFS",
+    "origin": "system_include",
     "scope": null
   },
   {
@@ -96318,7 +96474,7 @@
     "location": {
       "column": "9",
       "line": "2",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
     },
     "name": "UART_H_",
     "origin": "user_include",
@@ -96332,7 +96488,7 @@
     "location": {
       "column": "6",
       "line": "8",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
     },
     "name": "UART1_Init",
     "origin": "user_include",
@@ -96346,7 +96502,7 @@
     "location": {
       "column": "6",
       "line": "8",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
     },
     "name": "UART1_Init",
     "origin": "user_include",
@@ -96360,7 +96516,7 @@
     "location": {
       "column": "6",
       "line": "9",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
     },
     "name": "UART1_SendByte",
     "origin": "user_include",
@@ -96374,7 +96530,7 @@
     "location": {
       "column": "6",
       "line": "9",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
     },
     "name": "UART1_SendByte",
     "origin": "user_include",
@@ -96388,7 +96544,7 @@
     "location": {
       "column": "9",
       "line": "10",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
     },
     "name": "UART1_ReceiveByte",
     "origin": "user_include",
@@ -96402,7 +96558,7 @@
     "location": {
       "column": "9",
       "line": "10",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
     },
     "name": "UART1_ReceiveByte",
     "origin": "user_include",
@@ -96416,7 +96572,7 @@
     "location": {
       "column": "6",
       "line": "11",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
     },
     "name": "UART1_SendString",
     "origin": "user_include",
@@ -96430,7 +96586,7 @@
     "location": {
       "column": "6",
       "line": "11",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.h"
     },
     "name": "UART1_SendString",
     "origin": "user_include",
@@ -96815,132 +96971,6 @@
     "scope": null
   },
   {
-    "ID": "c:Motor.h@26@macro@MOTOR_H_",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "MOTOR_H_",
-    "location": {
-      "column": "9",
-      "line": "2",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
-    },
-    "name": "MOTOR_H_",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Motor_Init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Motor_Init(void)",
-    "location": {
-      "column": "6",
-      "line": "6",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
-    },
-    "name": "Motor_Init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Motor_Init",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Motor_Init(void)",
-    "location": {
-      "column": "6",
-      "line": "6",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
-    },
-    "name": "Motor_Init",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Motor_Open",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Motor_Open(void)",
-    "location": {
-      "column": "6",
-      "line": "7",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
-    },
-    "name": "Motor_Open",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Motor_Open",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Motor_Open(void)",
-    "location": {
-      "column": "6",
-      "line": "7",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
-    },
-    "name": "Motor_Open",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Motor_Close",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Motor_Close(void)",
-    "location": {
-      "column": "6",
-      "line": "8",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
-    },
-    "name": "Motor_Close",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Motor_Close",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Motor_Close(void)",
-    "location": {
-      "column": "6",
-      "line": "8",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
-    },
-    "name": "Motor_Close",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Motor_Stop",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Motor_Stop(void)",
-    "location": {
-      "column": "6",
-      "line": "9",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
-    },
-    "name": "Motor_Stop",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@Motor_Stop",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void Motor_Stop(void)",
-    "location": {
-      "column": "6",
-      "line": "9",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
-    },
-    "name": "Motor_Stop",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:EEPROM.h@32@macro@EEPROM_MCAL_H_",
     "What": "MacroDef",
     "defdec": "Def",
@@ -96948,7 +96978,7 @@
     "location": {
       "column": "9",
       "line": "2",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
     },
     "name": "EEPROM_MCAL_H_",
     "origin": "user_include",
@@ -96962,7 +96992,7 @@
     "location": {
       "column": "6",
       "line": "6",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
     },
     "name": "EEPROM0_Init",
     "origin": "user_include",
@@ -96976,7 +97006,7 @@
     "location": {
       "column": "6",
       "line": "6",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
     },
     "name": "EEPROM0_Init",
     "origin": "user_include",
@@ -96990,7 +97020,7 @@
     "location": {
       "column": "9",
       "line": "9",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
     },
     "name": "EEPROM_Load",
     "origin": "user_include",
@@ -97004,7 +97034,7 @@
     "location": {
       "column": "9",
       "line": "9",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
     },
     "name": "EEPROM_Load",
     "origin": "user_include",
@@ -97018,7 +97048,7 @@
     "location": {
       "column": "6",
       "line": "12",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
     },
     "name": "EEPROM_Save",
     "origin": "user_include",
@@ -97032,7 +97062,7 @@
     "location": {
       "column": "6",
       "line": "12",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
     },
     "name": "EEPROM_Save",
     "origin": "user_include",
@@ -97046,7 +97076,7 @@
     "location": {
       "column": "6",
       "line": "15",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
     },
     "name": "EEPROM_Clear",
     "origin": "user_include",
@@ -97060,9 +97090,135 @@
     "location": {
       "column": "6",
       "line": "15",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.h"
     },
     "name": "EEPROM_Clear",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:Motor.h@26@macro@MOTOR_H_",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "MOTOR_H_",
+    "location": {
+      "column": "9",
+      "line": "2",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
+    },
+    "name": "MOTOR_H_",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Motor_Init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Motor_Init(void)",
+    "location": {
+      "column": "6",
+      "line": "6",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
+    },
+    "name": "Motor_Init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Motor_Init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Motor_Init(void)",
+    "location": {
+      "column": "6",
+      "line": "6",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
+    },
+    "name": "Motor_Init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Motor_Open",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Motor_Open(void)",
+    "location": {
+      "column": "6",
+      "line": "7",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
+    },
+    "name": "Motor_Open",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Motor_Open",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Motor_Open(void)",
+    "location": {
+      "column": "6",
+      "line": "7",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
+    },
+    "name": "Motor_Open",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Motor_Close",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Motor_Close(void)",
+    "location": {
+      "column": "6",
+      "line": "8",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
+    },
+    "name": "Motor_Close",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Motor_Close",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Motor_Close(void)",
+    "location": {
+      "column": "6",
+      "line": "8",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
+    },
+    "name": "Motor_Close",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Motor_Stop",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Motor_Stop(void)",
+    "location": {
+      "column": "6",
+      "line": "9",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
+    },
+    "name": "Motor_Stop",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@Motor_Stop",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void Motor_Stop(void)",
+    "location": {
+      "column": "6",
+      "line": "9",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.h"
+    },
+    "name": "Motor_Stop",
     "origin": "user_include",
     "scope": null
   },
@@ -97102,7 +97258,7 @@
     "location": {
       "column": "9",
       "line": "11",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
     },
     "name": "MOTOR_IN1",
     "origin": "project_file",
@@ -97116,7 +97272,7 @@
     "location": {
       "column": "9",
       "line": "12",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
     },
     "name": "MOTOR_IN2",
     "origin": "project_file",
@@ -97130,7 +97286,7 @@
     "location": {
       "column": "13",
       "line": "14",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
     },
     "name": "Motor_Delay",
     "origin": "project_file",
@@ -97144,7 +97300,7 @@
     "location": {
       "column": "6",
       "line": "19",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
     },
     "name": "Motor_Init",
     "origin": "project_file",
@@ -97158,7 +97314,7 @@
     "location": {
       "column": "6",
       "line": "33",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
     },
     "name": "Motor_Stop",
     "origin": "project_file",
@@ -97172,7 +97328,7 @@
     "location": {
       "column": "6",
       "line": "38",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
     },
     "name": "Motor_Open",
     "origin": "project_file",
@@ -97186,10 +97342,264 @@
     "location": {
       "column": "6",
       "line": "49",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\Motor.c"
     },
     "name": "Motor_Close",
     "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:RGB_LED.c@101@macro@RED_PIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "RED_PIN",
+    "location": {
+      "column": "9",
+      "line": "5",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.c"
+    },
+    "name": "RED_PIN",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:RGB_LED.c@131@macro@BLUE_PIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "BLUE_PIN",
+    "location": {
+      "column": "9",
+      "line": "6",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.c"
+    },
+    "name": "BLUE_PIN",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:RGB_LED.c@161@macro@GREEN_PIN",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "GREEN_PIN",
+    "location": {
+      "column": "9",
+      "line": "7",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.c"
+    },
+    "name": "GREEN_PIN",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@RGB_LED_Init",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void RGB_LED_Init(void)",
+    "location": {
+      "column": "6",
+      "line": "9",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.c"
+    },
+    "name": "RGB_LED_Init",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@RGB_LED_SetColor",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void RGB_LED_SetColor(RGB_Color_t)",
+    "location": {
+      "column": "6",
+      "line": "26",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.c"
+    },
+    "name": "RGB_LED_SetColor",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:RGB_LED.h@28@macro@RGB_LED_H_",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "RGB_LED_H_",
+    "location": {
+      "column": "9",
+      "line": "2",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+    },
+    "name": "RGB_LED_H_",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@EA@RGB_Color_t",
+    "What": "Enum",
+    "defdec": "Def",
+    "display": "",
+    "fields": [
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_OFF",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_OFF",
+        "location": {
+          "column": "5",
+          "line": "8",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+        },
+        "name": "RGB_OFF",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_RED",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_RED",
+        "location": {
+          "column": "5",
+          "line": "9",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+        },
+        "name": "RGB_RED",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_GREEN",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_GREEN",
+        "location": {
+          "column": "5",
+          "line": "10",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+        },
+        "name": "RGB_GREEN",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_BLUE",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_BLUE",
+        "location": {
+          "column": "5",
+          "line": "11",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+        },
+        "name": "RGB_BLUE",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_YELLOW",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_YELLOW",
+        "location": {
+          "column": "5",
+          "line": "12",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+        },
+        "name": "RGB_YELLOW",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_CYAN",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_CYAN",
+        "location": {
+          "column": "5",
+          "line": "13",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+        },
+        "name": "RGB_CYAN",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_MAGENTA",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_MAGENTA",
+        "location": {
+          "column": "5",
+          "line": "14",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+        },
+        "name": "RGB_MAGENTA",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@RGB_Color_t@RGB_WHITE",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "RGB_WHITE",
+        "location": {
+          "column": "5",
+          "line": "15",
+          "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+        },
+        "name": "RGB_WHITE",
+        "origin": "user_include",
+        "scope": null
+      }
+    ],
+    "location": {
+      "column": "9",
+      "line": "6",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+    },
+    "name": "",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@T@RGB_Color_t",
+    "What": "Typedef",
+    "defdec": "Def",
+    "display": "enum RGB_Color_t",
+    "location": {
+      "column": "3",
+      "line": "16",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+    },
+    "name": "RGB_Color_t",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@RGB_LED_Init",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void RGB_LED_Init(void)",
+    "location": {
+      "column": "6",
+      "line": "18",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+    },
+    "name": "RGB_LED_Init",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@RGB_LED_SetColor",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void RGB_LED_SetColor(RGB_Color_t)",
+    "location": {
+      "column": "6",
+      "line": "19",
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\HAL\\RGB_LED.h"
+    },
+    "name": "RGB_LED_SetColor",
+    "origin": "user_include",
     "scope": null
   },
   {
@@ -97200,7 +97610,7 @@
     "location": {
       "column": "9",
       "line": "14",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "EE_MAGIC",
     "origin": "project_file",
@@ -97214,7 +97624,7 @@
     "location": {
       "column": "9",
       "line": "15",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "EE_BLOCK",
     "origin": "project_file",
@@ -97228,7 +97638,7 @@
     "location": {
       "column": "9",
       "line": "17",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "OFF_MAGIC",
     "origin": "project_file",
@@ -97242,7 +97652,7 @@
     "location": {
       "column": "9",
       "line": "18",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "OFF_INIT",
     "origin": "project_file",
@@ -97256,7 +97666,7 @@
     "location": {
       "column": "9",
       "line": "19",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "OFF_TIMEOUT",
     "origin": "project_file",
@@ -97270,7 +97680,7 @@
     "location": {
       "column": "9",
       "line": "20",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "OFF_PASS01_23",
     "origin": "project_file",
@@ -97284,7 +97694,7 @@
     "location": {
       "column": "9",
       "line": "21",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "OFF_PASS4",
     "origin": "project_file",
@@ -97298,7 +97708,7 @@
     "location": {
       "column": "13",
       "line": "23",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "eeprom_wait_ready",
     "origin": "project_file",
@@ -97312,7 +97722,7 @@
     "location": {
       "column": "6",
       "line": "28",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "EEPROM0_Init",
     "origin": "project_file",
@@ -97326,7 +97736,7 @@
     "location": {
       "column": "17",
       "line": "42",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "ee_read_word",
     "origin": "project_file",
@@ -97340,7 +97750,7 @@
     "location": {
       "column": "13",
       "line": "50",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "ee_write_word",
     "origin": "project_file",
@@ -97354,7 +97764,7 @@
     "location": {
       "column": "9",
       "line": "58",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "EEPROM_Load",
     "origin": "project_file",
@@ -97368,7 +97778,7 @@
     "location": {
       "column": "14",
       "line": "60",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "magic",
     "origin": "project_file",
@@ -97382,7 +97792,7 @@
     "location": {
       "column": "14",
       "line": "66",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "initw",
     "origin": "project_file",
@@ -97396,7 +97806,7 @@
     "location": {
       "column": "14",
       "line": "67",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "timew",
     "origin": "project_file",
@@ -97410,7 +97820,7 @@
     "location": {
       "column": "14",
       "line": "68",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "p0123",
     "origin": "project_file",
@@ -97424,7 +97834,7 @@
     "location": {
       "column": "14",
       "line": "69",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "p4w",
     "origin": "project_file",
@@ -97438,7 +97848,7 @@
     "location": {
       "column": "13",
       "line": "73",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "t",
     "origin": "project_file",
@@ -97452,7 +97862,7 @@
     "location": {
       "column": "6",
       "line": "87",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "EEPROM_Save",
     "origin": "project_file",
@@ -97466,7 +97876,7 @@
     "location": {
       "column": "14",
       "line": "89",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "p0123",
     "origin": "project_file",
@@ -97480,7 +97890,7 @@
     "location": {
       "column": "14",
       "line": "95",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "p4w",
     "origin": "project_file",
@@ -97494,7 +97904,7 @@
     "location": {
       "column": "6",
       "line": "104",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\EEPROM.c"
     },
     "name": "EEPROM_Clear",
     "origin": "project_file",
@@ -97508,7 +97918,7 @@
     "location": {
       "column": "6",
       "line": "6",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
     },
     "name": "UART1_Init",
     "origin": "project_file",
@@ -97522,7 +97932,7 @@
     "location": {
       "column": "14",
       "line": "30",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
     },
     "name": "brd",
     "origin": "project_file",
@@ -97536,7 +97946,7 @@
     "location": {
       "column": "14",
       "line": "31",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
     },
     "name": "frac",
     "origin": "project_file",
@@ -97550,7 +97960,7 @@
     "location": {
       "column": "6",
       "line": "44",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
     },
     "name": "UART1_SendByte",
     "origin": "project_file",
@@ -97564,7 +97974,7 @@
     "location": {
       "column": "9",
       "line": "51",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
     },
     "name": "UART1_ReceiveByte",
     "origin": "project_file",
@@ -97578,7 +97988,7 @@
     "location": {
       "column": "6",
       "line": "58",
-      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
+      "path": "C:\\Users\\moham\\OneDrive\\Desktop\\Embedded Project\\Embedded-Keysystem-v22\\Embedded-Keysystem\\Control_ECU\\MCAL\\UART.c"
     },
     "name": "UART1_SendString",
     "origin": "project_file",

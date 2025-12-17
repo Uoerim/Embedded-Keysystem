@@ -1,15 +1,15 @@
-"C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\APP\main.c"
+"C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\APP\main.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\Debug\BrowseInfo\APP\main.pbi.dep
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\BrowseInfo\APP\main.pbi.dep
 -o
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\Debug\BrowseInfo\APP\main.pbi
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\Debug\BrowseInfo\APP\main.pbi
 -I
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\APP
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\APP
 -I
 C:\ti\TivaWare_C_Series-2.2.0.295\inc
 -I

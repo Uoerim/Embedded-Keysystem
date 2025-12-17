@@ -1,15 +1,15 @@
-"C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\MCAL\UART.c"
+"C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\MCAL\UART.c"
 -std=c11
 -ferror-limit=0
 -fbracket-depth=512
 -funsigned-char
 -MD
 -MF
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\UART.pbi.dep
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\UART.pbi.dep
 -o
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\UART.pbi
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\MCAL\UART.pbi
 -I
-C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\HMI_ECU\MCAL
+C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\MCAL
 -I
 C:\ti\TivaWare_C_Series-2.2.0.295\inc
 -I

@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\settings\Control_ECU.Debug.general.xcl" --backend -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\settings\Control_ECU.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\settings\Control_ECU.Debug.general.xcl" --backend -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\settings\Control_ECU.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\settings\Control_ECU.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem\Control_ECU\settings\Control_ECU.Debug.driver.xcl" 
+& "C:\Program Files\IAR Systems\Embedded Workbench 9.0\common\bin\cspybat" -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\settings\Control_ECU.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\Control_ECU\settings\Control_ECU.Debug.driver.xcl" 
 }
