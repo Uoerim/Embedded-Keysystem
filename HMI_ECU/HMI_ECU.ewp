@@ -2093,6 +2093,12 @@
         </file>
     </group>
     <group>
+        <name>Common</name>
+        <file>
+            <name>$PROJ_DIR$\Common\Std_Types.h</name>
+        </file>
+    </group>
+    <group>
         <name>HAL</name>
         <file>
             <name>$PROJ_DIR$\HAL\Buzzer.c</name>
@@ -2120,6 +2126,12 @@
         </file>
         <file>
             <name>$PROJ_DIR$\MCAL\ADC.h</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\MCAL\Delay.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\MCAL\Delay.h</name>
         </file>
         <file>
             <name>$PROJ_DIR$\MCAL\GPIO.c</name>

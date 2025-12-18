@@ -2092,6 +2092,12 @@
         </file>
     </group>
     <group>
+        <name>Common</name>
+        <file>
+            <name>$PROJ_DIR$\Common\Std_Types.h</name>
+        </file>
+    </group>
+    <group>
         <name>HAL</name>
         <file>
             <name>$PROJ_DIR$\HAL\Motor.c</name>
@@ -2108,6 +2114,12 @@
     </group>
     <group>
         <name>MCAL</name>
+        <file>
+            <name>$PROJ_DIR$\MCAL\Delay.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\MCAL\Delay.h</name>
+        </file>
         <file>
             <name>$PROJ_DIR$\MCAL\EEPROM.c</name>
         </file>

@@ -1,101 +1,124 @@
 #include <stdint.h>
 #include "../MCAL/I2C.h"
+#include "../MCAL/delay.h"
 #include "LCD.h"
 
-#define LCD_ADDR        0x27    // from your scan
-#define LCD_BACKLIGHT   0x08    // P3
-#define LCD_ENABLE      0x04    // P2
-#define LCD_RW          0x02    // P1 (we keep RW=0)
-#define LCD_RS          0x01    // P0
+/* PCF8574 I2C backpack */
+#define LCD_ADDR_7BIT           (0x27u)
 
-static void lcd_delay(volatile uint32_t t)
+#define LCD_BACKLIGHT_MASK      (0x08u) /* P3 */
+#define LCD_EN_MASK             (0x04u) /* P2 */
+#define LCD_RW_MASK             (0x02u) /* P1 (kept 0) */
+#define LCD_RS_MASK             (0x01u) /* P0 */
+
+#define LCD_I2C_TIMEOUT_MS      (20u)
+
+/* HD44780 commands */
+#define LCD_CMD_CLEAR           (0x01u)
+#define LCD_CMD_HOME            (0x02u)
+#define LCD_CMD_ENTRYMODE       (0x06u)
+#define LCD_CMD_DISPLAY_ON      (0x0Cu)
+#define LCD_CMD_FUNCTION_4BIT   (0x28u)
+#define LCD_CMD_SET_DDRAM       (0x80u)
+
+static Std_ReturnType LCD_WriteExpander(uint8_t data)
 {
-    while (t--) { }
+    return I2C0_WriteByte(LCD_ADDR_7BIT, data, LCD_I2C_TIMEOUT_MS);
 }
 
-static void lcd_write_nibble(uint8_t nibble, uint8_t rs)
+static void LCD_Strobe(uint8_t data)
 {
-    uint8_t data = 0;
-
-    // put nibble on D4–D7 (P4–P7)
-    data |= (nibble & 0x0F) << 4;
-
-    // set RS
-    if (rs)
-        data |= LCD_RS;
-
-    // backlight always ON
-    data |= LCD_BACKLIGHT;
-
-    // EN high
-    I2C0_WriteByte(LCD_ADDR, data | LCD_ENABLE);
-    lcd_delay(2000);
-
-    // EN low
-    I2C0_WriteByte(LCD_ADDR, data & ~LCD_ENABLE);
-    lcd_delay(2000);
+    (void)LCD_WriteExpander((uint8_t)(data | LCD_EN_MASK));
+    Delay_ms(2u);
+    (void)LCD_WriteExpander((uint8_t)(data & (uint8_t)(~LCD_EN_MASK)));
+    Delay_ms(2u);
 }
 
-static void lcd_send_byte(uint8_t value, uint8_t rs)
+static void LCD_WriteNibble(uint8_t nibble, boolean rs)
 {
-    lcd_write_nibble((value >> 4) & 0x0F, rs); // high nibble
-    lcd_write_nibble(value & 0x0F, rs);        // low nibble
+    uint8_t data = 0u;
+
+    data |= (uint8_t)((nibble & 0x0Fu) << 4);
+    data |= LCD_BACKLIGHT_MASK;
+
+    if (rs != FALSE)
+    {
+        data |= LCD_RS_MASK;
+    }
+
+    /* RW kept low */
+    (void)LCD_WriteExpander(data);
+    LCD_Strobe(data);
 }
 
-static void lcd_send_cmd(uint8_t cmd)
+static void LCD_SendByte(uint8_t value, boolean rs)
 {
-    lcd_send_byte(cmd, 0);
+    LCD_WriteNibble((uint8_t)((value >> 4) & 0x0Fu), rs);
+    LCD_WriteNibble((uint8_t)(value & 0x0Fu), rs);
+}
+
+static void LCD_SendCmd(uint8_t cmd)
+{
+    LCD_SendByte(cmd, FALSE);
+    Delay_ms(2u);
 }
 
 void LCD_SendChar(char c)
 {
-    lcd_send_byte((uint8_t)c, 1);
+    LCD_SendByte((uint8_t)c, TRUE);
+    Delay_ms(2u);
 }
 
 void LCD_SendString(const char *str)
 {
-    while (*str)
+    if (str == (const char *)0)
     {
-        LCD_SendChar(*str++);
+        return;
+    }
+
+    while (*str != '\0')
+    {
+        LCD_SendChar(*str);
+        str++;
     }
 }
 
 void LCD_Clear(void)
 {
-    lcd_send_cmd(0x01);  // clear display
-    lcd_delay(8000);
+    LCD_SendCmd(LCD_CMD_CLEAR);
+    Delay_ms(5u);
 }
 
 void LCD_SetCursor(uint8_t row, uint8_t col)
 {
-    uint8_t addr = (row == 0) ? 0x00 : 0x40;
-    addr += col;
-    lcd_send_cmd(0x80 | addr);
+    uint8_t base = (row == 0u) ? 0x00u : 0x40u;
+    uint8_t addr = (uint8_t)(base + col);
+
+    LCD_SendCmd((uint8_t)(LCD_CMD_SET_DDRAM | addr));
 }
 
 void LCD_Init(void)
 {
-    I2C0_Init();
-    lcd_delay(40000);
+    I2C0_Init_100k_16MHz();
+    Delay_ms(50u); /* power-up */
 
-    // init sequence for 4-bit mode
-    lcd_write_nibble(0x03, 0);
-    lcd_delay(40000);
-    lcd_write_nibble(0x03, 0);
-    lcd_delay(40000);
-    lcd_write_nibble(0x03, 0);
-    lcd_delay(40000);
-    lcd_write_nibble(0x02, 0);   // 4-bit
-    lcd_delay(40000);
+    /* Backlight ON */
+    (void)LCD_WriteExpander(LCD_BACKLIGHT_MASK);
+    Delay_ms(10u);
 
-    // function set: 4-bit, 2 lines, 5x8 dots
-    lcd_send_cmd(0x28);
+    /* 4-bit init sequence (HD44780) */
+    LCD_WriteNibble(0x03u, FALSE);
+    Delay_ms(5u);
+    LCD_WriteNibble(0x03u, FALSE);
+    Delay_ms(5u);
+    LCD_WriteNibble(0x03u, FALSE);
+    Delay_ms(5u);
 
-    // display on, cursor off, blink off
-    lcd_send_cmd(0x0C);
+    LCD_WriteNibble(0x02u, FALSE); /* 4-bit mode */
+    Delay_ms(5u);
 
-    // entry mode: increment, no shift
-    lcd_send_cmd(0x06);
-
+    LCD_SendCmd(LCD_CMD_FUNCTION_4BIT);
+    LCD_SendCmd(LCD_CMD_DISPLAY_ON);
+    LCD_SendCmd(LCD_CMD_ENTRYMODE);
     LCD_Clear();
 }

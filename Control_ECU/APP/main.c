@@ -1,263 +1,261 @@
+/*========================================================
+ * File: main.c
+ * Brief: Control ECU main application (APP layer)
+ * Target: TM4C123GH6PM
+ * Clock: 16 MHz
+ *========================================================*/
 #include <stdint.h>
-#include "TM4C123GH6PM.h"
+#include "../Common/Std_Types.h"
 
 #include "../MCAL/UART.h"
 #include "../MCAL/EEPROM.h"
+#include "../MCAL/delay.h"
+
 #include "../HAL/Motor.h"
+#include "../HAL/RGB_LED.h"
 
 /* ================== CONFIG ================== */
-#define PASSWORD_LENGTH  5u
+#define PASSWORD_LENGTH        (5u)
 
-/* External RGB LED on Port C (common cathode, ON = HIGH)
-   PC5 = Red, PC6 = Green, PC7 = Blue */
-#define RGB_RED_PIN    (1u << 5)   /* PC5 */
-#define RGB_GREEN_PIN  (1u << 6)   /* PC6 */
-#define RGB_BLUE_PIN   (1u << 7)   /* PC7 */
+#define UART_BAUDRATE          (9600u)
+
+#define TIMEOUT_DEFAULT_SEC    (10u)
+#define TIMEOUT_MIN_SEC        (5u)
+#define TIMEOUT_MAX_SEC        (30u)
+
+#define BOOT_LED_MS            (300u)
+#define FEEDBACK_MS            (120u)
+#define SHORT_BLIP_MS          (80u)
+#define BLINK_MS               (250u)
 
 /* ================== STATE ================== */
 static char    g_password[PASSWORD_LENGTH] = { '1','2','3','4','5' };
-static uint8_t g_timeout_seconds           = 10u;
-static uint8_t g_initialized               = 0u;
+static uint8   g_timeout_seconds           = TIMEOUT_DEFAULT_SEC;
+static uint8   g_initialized               = 0u;
 
 /* ================== HELPERS ================== */
-static void delay(volatile uint32_t t) { while (t--) { } }
-
-typedef enum
+static uint8 Password_Equals(const char *a, const char *b)
 {
-    RGB_OFF = 0,
-    RGB_RED,
-    RGB_GREEN,
-    RGB_BLUE,
-    RGB_YELLOW,   /* R+G */
-    RGB_CYAN,     /* G+B */
-    RGB_MAGENTA,  /* R+B */
-    RGB_WHITE
-} RGB_Color_t;
-
-static void RGB_Init(void)
-{
-    SYSCTL_RCGCGPIO_R |= (1u << 2);   /* Port C */
-    (void)SYSCTL_RCGCGPIO_R;
-
-    GPIO_PORTC_DIR_R |= (RGB_RED_PIN | RGB_GREEN_PIN | RGB_BLUE_PIN);
-    GPIO_PORTC_DEN_R |= (RGB_RED_PIN | RGB_GREEN_PIN | RGB_BLUE_PIN);
-
-    GPIO_PORTC_DATA_R &= ~(RGB_RED_PIN | RGB_GREEN_PIN | RGB_BLUE_PIN);
-}
-
-static void RGB_Set(RGB_Color_t c)
-{
-    GPIO_PORTC_DATA_R &= ~(RGB_RED_PIN | RGB_GREEN_PIN | RGB_BLUE_PIN);
-
-    switch (c)
-    {
-        case RGB_RED:     GPIO_PORTC_DATA_R |= RGB_RED_PIN; break;
-        case RGB_GREEN:   GPIO_PORTC_DATA_R |= RGB_GREEN_PIN; break;
-        case RGB_BLUE:    GPIO_PORTC_DATA_R |= RGB_BLUE_PIN; break;
-        case RGB_YELLOW:  GPIO_PORTC_DATA_R |= (RGB_RED_PIN | RGB_GREEN_PIN); break;
-        case RGB_CYAN:    GPIO_PORTC_DATA_R |= (RGB_GREEN_PIN | RGB_BLUE_PIN); break;
-        case RGB_MAGENTA: GPIO_PORTC_DATA_R |= (RGB_RED_PIN | RGB_BLUE_PIN); break;
-        case RGB_WHITE:   GPIO_PORTC_DATA_R |= (RGB_RED_PIN | RGB_GREEN_PIN | RGB_BLUE_PIN); break;
-        case RGB_OFF:
-        default:
-            break;
-    }
-}
-
-static uint8_t Password_Equals(const char *a, const char *b)
-{
-    for (uint8_t i = 0u; i < PASSWORD_LENGTH; i++)
+    uint8 i;
+    for (i = 0u; i < PASSWORD_LENGTH; i++)
     {
         if (a[i] != b[i]) { return 0u; }
     }
     return 1u;
 }
 
-/* ================== COMMAND HANDLERS ================== */
+static void Password_Copy(char *dst, const char *src)
+{
+    uint8 i;
+    for (i = 0u; i < PASSWORD_LENGTH; i++)
+    {
+        dst[i] = src[i];
+    }
+}
 
+static uint8 ClampTimeout(uint8 t)
+{
+    if (t < TIMEOUT_MIN_SEC) { t = TIMEOUT_MIN_SEC; }
+    if (t > TIMEOUT_MAX_SEC) { t = TIMEOUT_MAX_SEC; }
+    return t;
+}
+
+/* ================== COMMANDS ==================
+   I : init flag (0/1)
+   V : verify password -> Y/N
+   N : set password (first run / change) -> K
+   O : open motor
+   L : close motor
+   R : reset -> K
+   G : get saved timeout -> sends one byte timeout (5..30)
+   S : set timeout with password (atomic) -> K/N/E
+       HMI sends: 'S' + 5 pass bytes + 2 ascii digits
+*/
 static void Handle_I(void)
 {
-    UART1_SendByte(g_initialized ? '1' : '0');
+    UART1_SendByte((g_initialized != 0u) ? (uint8)'1' : (uint8)'0');
 }
 
 static void Handle_V(void)
 {
     char entered[PASSWORD_LENGTH];
+    uint8 i;
 
-    for (uint8_t i = 0u; i < PASSWORD_LENGTH; i++)
+    for (i = 0u; i < PASSWORD_LENGTH; i++)
     {
         entered[i] = (char)UART1_ReceiveByte();
     }
 
-    if ((g_initialized != 0u) && Password_Equals(entered, g_password))
+    if ((g_initialized != 0u) && (Password_Equals(entered, g_password) != 0u))
     {
-        UART1_SendByte('Y');
-        RGB_Set(RGB_GREEN);
-        delay(120000);
-        RGB_Set(RGB_BLUE);
+        UART1_SendByte((uint8)'Y');
+        RGB_LED_SetColor(RGB_GREEN);
     }
     else
     {
-        UART1_SendByte('N');
-        RGB_Set(RGB_RED);
-        delay(120000);
-        RGB_Set(RGB_BLUE);
+        UART1_SendByte((uint8)'N');
+        RGB_LED_SetColor(RGB_RED);
     }
+    Delay_ms(FEEDBACK_MS);
+    RGB_LED_SetColor(RGB_BLUE);
 }
 
 static void Handle_N(void)
 {
-    char newPass[PASSWORD_LENGTH];
+    char new_pass[PASSWORD_LENGTH];
+    uint8 i;
 
-    for (uint8_t i = 0u; i < PASSWORD_LENGTH; i++)
+    for (i = 0u; i < PASSWORD_LENGTH; i++)
     {
-        newPass[i] = (char)UART1_ReceiveByte();
+        new_pass[i] = (char)UART1_ReceiveByte();
     }
 
-    for (uint8_t i = 0u; i < PASSWORD_LENGTH; i++)
-    {
-        g_password[i] = newPass[i];
-    }
-
+    Password_Copy(g_password, new_pass);
     g_initialized = 1u;
 
     EEPROM_Save(g_password, g_timeout_seconds, g_initialized);
 
-    UART1_SendByte('K');
+    UART1_SendByte((uint8)'K');
 
-    RGB_Set(RGB_CYAN);
-    delay(150000);
-    RGB_Set(RGB_BLUE);
+    RGB_LED_SetColor(RGB_CYAN);
+    Delay_ms(FEEDBACK_MS);
+    RGB_LED_SetColor(RGB_BLUE);
 }
 
-/* Robust timeout handler:
-   Accepts:
-   1) 'T' + '0'..'9' + '0'..'9'  (ASCII digits)
-   OR
-   2) 'T' + raw byte (5..30)
-*/
-static void Handle_T(void)
+static void Handle_G(void)
 {
-    uint8_t b1 = UART1_ReceiveByte();
-    uint8_t val;
+    /* return currently saved timeout (already clamped) */
+    UART1_SendByte((uint8)g_timeout_seconds);
+}
 
-    if ((b1 >= (uint8_t)'0') && (b1 <= (uint8_t)'9'))
-    {
-        uint8_t b2 = UART1_ReceiveByte();
+/* Atomic set timeout with password */
+static void Handle_S(void)
+{
+    char entered[PASSWORD_LENGTH];
+    uint8 i;
+    uint8 b1;
+    uint8 b2;
+    uint8 timeout;
 
-        if ((b2 >= (uint8_t)'0') && (b2 <= (uint8_t)'9'))
-        {
-            val = (uint8_t)((b1 - (uint8_t)'0') * 10u + (b2 - (uint8_t)'0'));
-        }
-        else
-        {
-            /* bad second digit: fallback */
-            val = 10u;
-        }
-    }
-    else
+    for (i = 0u; i < PASSWORD_LENGTH; i++)
     {
-        /* raw byte format */
-        val = b1;
+        entered[i] = (char)UART1_ReceiveByte();
     }
 
-    if (val < 5u)  { val = 5u; }
-    if (val > 30u) { val = 30u; }
+    b1 = UART1_ReceiveByte();
+    b2 = UART1_ReceiveByte();
 
-    g_timeout_seconds = val;
+    /* must be digits */
+    if ((b1 < (uint8)'0') || (b1 > (uint8)'9') || (b2 < (uint8)'0') || (b2 > (uint8)'9'))
+    {
+        UART1_SendByte((uint8)'E');
+        RGB_LED_SetColor(RGB_RED);
+        Delay_ms(FEEDBACK_MS);
+        RGB_LED_SetColor(RGB_BLUE);
+        return;
+    }
 
+    timeout = (uint8)(((b1 - (uint8)'0') * 10u) + (b2 - (uint8)'0'));
+    timeout = ClampTimeout(timeout);
+
+    if ((g_initialized == 0u) || (Password_Equals(entered, g_password) == 0u))
+    {
+        UART1_SendByte((uint8)'N');
+        RGB_LED_SetColor(RGB_RED);
+        Delay_ms(FEEDBACK_MS);
+        RGB_LED_SetColor(RGB_BLUE);
+        return;
+    }
+
+    g_timeout_seconds = timeout;
     EEPROM_Save(g_password, g_timeout_seconds, g_initialized);
 
-    UART1_SendByte('K');
-
-    RGB_Set(RGB_YELLOW);
-    delay(150000);
-    RGB_Set(RGB_BLUE);
+    UART1_SendByte((uint8)'K');
+    RGB_LED_SetColor(RGB_YELLOW);
+    Delay_ms(FEEDBACK_MS);
+    RGB_LED_SetColor(RGB_BLUE);
 }
 
 static void Handle_R(void)
 {
     g_initialized = 0u;
-    g_timeout_seconds = 10u;
+    g_timeout_seconds = TIMEOUT_DEFAULT_SEC;
 
     Motor_Stop();
     EEPROM_Clear();
 
-    UART1_SendByte('K');
+    UART1_SendByte((uint8)'K');
 
-    RGB_Set(RGB_MAGENTA);
-    delay(250000);
-    RGB_Set(RGB_OFF);
-    delay(250000);
-    RGB_Set(RGB_MAGENTA);
-    delay(250000);
-    RGB_Set(RGB_BLUE);
+    RGB_LED_SetColor(RGB_MAGENTA);
+    Delay_ms(BLINK_MS);
+    RGB_LED_SetColor(RGB_OFF);
+    Delay_ms(BLINK_MS);
+    RGB_LED_SetColor(RGB_MAGENTA);
+    Delay_ms(BLINK_MS);
+    RGB_LED_SetColor(RGB_BLUE);
+}
+
+static void Handle_O(void)
+{
+    RGB_LED_SetColor(RGB_CYAN);
+    Motor_Open();
+    RGB_LED_SetColor(RGB_BLUE);
+}
+
+static void Handle_L(void)
+{
+    RGB_LED_SetColor(RGB_YELLOW);
+    Motor_Close();
+    RGB_LED_SetColor(RGB_BLUE);
+}
+
+static void Handle_Unknown(void)
+{
+    UART1_SendByte((uint8)'?');
+    RGB_LED_SetColor(RGB_RED);
+    Delay_ms(SHORT_BLIP_MS);
+    RGB_LED_SetColor(RGB_BLUE);
 }
 
 /* ================== MAIN ================== */
-
 int main(void)
 {
-    RGB_Init();
+    uint8 init = 0u;
+    uint8 t = TIMEOUT_DEFAULT_SEC;
+    char pass[PASSWORD_LENGTH];
+
+    Delay_Init_16MHz();
+    RGB_LED_Init();
     Motor_Init();
-    UART1_Init(9600);
+    UART1_Init(UART_BAUDRATE);
     EEPROM0_Init();
 
-    /* Load from EEPROM if exists */
+    if (EEPROM_Load(pass, &t, &init) != 0u)
     {
-        uint8_t init = 0u;
-        uint8_t t = 10u;
-        char pass[PASSWORD_LENGTH];
-
-        if (EEPROM_Load(pass, &t, &init))
-        {
-            for (uint8_t i = 0u; i < PASSWORD_LENGTH; i++)
-            {
-                g_password[i] = pass[i];
-            }
-            g_timeout_seconds = t;
-            g_initialized = init;
-        }
-        else
-        {
-            g_initialized = 0u;
-            g_timeout_seconds = 10u;
-        }
+        Password_Copy(g_password, pass);
+        g_timeout_seconds = ClampTimeout(t);
+        g_initialized = (init != 0u) ? 1u : 0u;
     }
 
-    /* Boot indicator */
-    RGB_Set(RGB_WHITE);
-    delay(300000);
-    RGB_Set(RGB_BLUE); /* idle */
+    RGB_LED_SetColor(RGB_WHITE);
+    Delay_ms(BOOT_LED_MS);
+    RGB_LED_SetColor(RGB_BLUE);
 
-    while (1)
+    for (;;)
     {
-        uint8_t cmd = UART1_ReceiveByte();
+        uint8 cmd = UART1_ReceiveByte();
 
-        if      (cmd == 'I') { Handle_I(); }
-        else if (cmd == 'V') { Handle_V(); }
-        else if (cmd == 'N') { Handle_N(); }
-        else if (cmd == 'T') { Handle_T(); }
-        else if (cmd == 'R') { Handle_R(); }
-
-        else if (cmd == 'O')
+        switch (cmd)
         {
-            RGB_Set(RGB_CYAN);
-            Motor_Open();
-            RGB_Set(RGB_BLUE);
-        }
-        else if (cmd == 'L')
-        {
-            RGB_Set(RGB_YELLOW);
-            Motor_Close();
-            RGB_Set(RGB_BLUE);
-        }
-        else
-        {
-            UART1_SendByte('?');  /* helps debugging */
-            RGB_Set(RGB_RED);
-            delay(80000);
-            RGB_Set(RGB_BLUE);
+            case (uint8)'I': Handle_I(); break;
+            case (uint8)'V': Handle_V(); break;
+            case (uint8)'N': Handle_N(); break;
+            case (uint8)'G': Handle_G(); break;
+            case (uint8)'S': Handle_S(); break;
+            case (uint8)'R': Handle_R(); break;
+            case (uint8)'O': Handle_O(); break;
+            case (uint8)'L': Handle_L(); break;
+            default:         Handle_Unknown(); break;
         }
     }
 }

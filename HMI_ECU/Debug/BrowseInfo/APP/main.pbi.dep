@@ -1,11 +1,11 @@
 C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\BrowseInfo\APP\main.pbi: \
-  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\APP\..\MCAL\UART.h \
-  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\APP\..\MCAL\SysTick.h \
-  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\APP\..\MCAL\ADC.h \
   C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\APP\..\HAL\Buzzer.h \
   C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\APP\..\HAL\Keypad.h \
   C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\APP\..\HAL\LCD.h \
-  C:\ti\TivaWare_C_Series-2.2.0.295\inc\TM4C123GH6PM.h \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\APP\..\MCAL\ADC.h \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\APP\..\MCAL\UART.h \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\APP\..\MCAL\delay.h \
+  C:\Users\moham\OneDrive\Desktop\Embedded\ Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\APP\..\HAL\..\Common\Std_Types.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Normal.h \
   C:\Program\ Files\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \

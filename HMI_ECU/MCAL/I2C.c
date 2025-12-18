@@ -1,36 +1,76 @@
 #include <stdint.h>
 #include "TM4C123GH6PM.h"
 #include "I2C.h"
+#include "delay.h"
 
-void I2C0_Init(void)
+/* I2C0: PB2=SCL, PB3=SDA */
+#define SYSCTL_RCGCI2C_I2C0_MASK        (1u << 0)
+#define SYSCTL_RCGCGPIO_GPIOB_MASK      (1u << 1)
+
+#define GPIO_PB2_MASK                   (1u << 2)
+#define GPIO_PB3_MASK                   (1u << 3)
+#define GPIO_PB23_MASK                  (GPIO_PB2_MASK | GPIO_PB3_MASK)
+
+/* I2C Master Control/Status */
+#define I2C_MCS_BUSY_MASK               (1u << 0)
+#define I2C_MCS_ERROR_MASK              (1u << 1)
+#define I2C_MCS_ARBLST_MASK             (1u << 4)
+
+static Std_ReturnType I2C0_WaitDone(uint32_t timeout_ms)
 {
-    // Enable clock for I2C0 and GPIOB
-    SYSCTL_RCGCI2C_R |= (1U << 0);   // I2C0
-    SYSCTL_RCGCGPIO_R |= (1U << 1);  // GPIOB
+    uint32_t start = Delay_GetTicksMs();
 
-    // Configure PB2 (SCL) and PB3 (SDA) for I2C0
-    GPIO_PORTB_AFSEL_R |= (1U << 2) | (1U << 3);
-    GPIO_PORTB_DEN_R   |= (1U << 2) | (1U << 3);
-    GPIO_PORTB_ODR_R   |= (1U << 3);         // SDA open-drain
+    while ((I2C0_MCS_R & I2C_MCS_BUSY_MASK) != 0u)
+    {
+        if ((Delay_GetTicksMs() - start) >= timeout_ms)
+        {
+            return E_NOT_OK;
+        }
+    }
 
-    // PCTL: set PB2/PB3 to I2C0 (function 3)
-    GPIO_PORTB_PCTL_R &= ~((0xF << 8) | (0xF << 12));
-    GPIO_PORTB_PCTL_R |=  (0x3 << 8) | (0x3 << 12);
+    /* Check error bits */
+    if ((I2C0_MCS_R & (I2C_MCS_ERROR_MASK | I2C_MCS_ARBLST_MASK)) != 0u)
+    {
+        return E_NOT_OK;
+    }
 
-    // Initialize I2C0 Master
-    I2C0_MCR_R = 0x10;               // Master mode
-
-    // 100 kHz SCL @ 16 MHz
-    I2C0_MTPR_R = 7;
+    return E_OK;
 }
 
-void I2C0_WriteByte(uint8_t slaveAddr, uint8_t data)
+void I2C0_Init_100k_16MHz(void)
 {
-    I2C0_MSA_R = (slaveAddr << 1);   // 7-bit address, write
-    I2C0_MDR_R = data;
+    SYSCTL_RCGCI2C_R |= SYSCTL_RCGCI2C_I2C0_MASK;
+    SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_GPIOB_MASK;
+    (void)SYSCTL_RCGCGPIO_R;
 
-    I2C0_MCS_R = 0x07;               // START + RUN + STOP
+    /* PB2/PB3 alt function */
+    GPIO_PORTB_AFSEL_R |= GPIO_PB23_MASK;
+    GPIO_PORTB_DEN_R   |= GPIO_PB23_MASK;
+    GPIO_PORTB_AMSEL_R &= ~GPIO_PB23_MASK;
 
-    // wait until BUSY bit clears
-    while (I2C0_MCS_R & 0x01) { }
+    /* SDA open-drain */
+    GPIO_PORTB_ODR_R |= GPIO_PB3_MASK;
+
+    /* PCTL: function 3 for I2C */
+    GPIO_PORTB_PCTL_R &= ~((0xFu << 8) | (0xFu << 12));
+    GPIO_PORTB_PCTL_R |=  ((0x3u << 8) | (0x3u << 12));
+
+    /* Master mode */
+    I2C0_MCR_R = 0x10u;
+
+    /* 100 kHz @ 16 MHz -> TPR = 7 (common setting) */
+    I2C0_MTPR_R = 7u;
+}
+
+Std_ReturnType I2C0_WriteByte(uint8_t slave_addr_7bit, uint8_t data, uint32_t timeout_ms)
+{
+    /* MSA: [7:1]=addr, bit0=0 for write */
+    I2C0_MSA_R = ((uint32_t)slave_addr_7bit << 1);
+
+    I2C0_MDR_R = (uint32_t)data;
+
+    /* START + RUN + STOP */
+    I2C0_MCS_R = 0x07u;
+
+    return I2C0_WaitDone(timeout_ms);
 }

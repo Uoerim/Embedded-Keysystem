@@ -11,7 +11,7 @@ uint8_t EEPROM_Load(char pass5[5], uint8_t *timeout_sec, uint8_t *initialized);
 /* write full state */
 void EEPROM_Save(const char pass5[5], uint8_t timeout_sec, uint8_t initialized);
 
-/* clear stored state (back to “first run”) */
+/* clear stored state (back to ï¿½first runï¿½) */
 void EEPROM_Clear(void);
 
 #endif

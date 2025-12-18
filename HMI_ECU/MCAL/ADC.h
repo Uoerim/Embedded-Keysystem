@@ -1,9 +1,9 @@
-#ifndef ADC_H_
-#define ADC_H_
+#ifndef ADC_H
+#define ADC_H
 
-#include <stdint.h>
+#include "../Common/Std_Types.h"
 
-void ADC_Init(void);        // configure PB4 as ADC input (AIN10)
-uint16_t ADC_Read(void);    // returns 0–4095
+void ADC_Init(void);
+Std_ReturnType ADC_ReadTimeout(uint32 timeout_ms, uint16 *out);
 
 #endif

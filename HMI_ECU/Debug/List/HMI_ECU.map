@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.10.1.308/W64 for ARM                  16/Dec/2025  21:52:15
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  18/Dec/2025  21:05:31
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
@@ -16,6 +16,8 @@
 #        Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\Obj\MCAL\ADC.o"
 #        "C:\Users\moham\OneDrive\Desktop\Embedded
 #        Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\Obj\HAL\Buzzer.o"
+#        "C:\Users\moham\OneDrive\Desktop\Embedded
+#        Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\Obj\MCAL\Delay.o"
 #        "C:\Users\moham\OneDrive\Desktop\Embedded
 #        Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\Obj\MCAL\GPIO.o"
 #        "C:\Users\moham\OneDrive\Desktop\Embedded
@@ -77,82 +79,74 @@ initialize by copy { rw };
   .intvec            ro code          0x0    0x40  vector_table_M.o [6]
                                    - 0x40    0x40
 
-"P1":                                      0x107c
-  .text              ro code         0x40   0x804  main.o [1]
-  .text              ro code        0x844   0x138  LCD.o [2]
-  .text              ro code        0x97c   0x10c  keypad.o [2]
-  .text              ro code        0xa88    0x84  Buzzer.o [2]
-  .text              ro code        0xb0c    0x4c  SysTick.o [3]
-  .text              ro code        0xb58   0x104  UART.o [3]
-  .text              ro code        0xc5c    0xdc  ADC.o [3]
-  .text              ro code        0xd38    0xac  I2C.o [3]
-  .text              ro code        0xde4    0x2a  copy_init3.o [6]
-  .text              ro code        0xe0e     0x2  vectortrap_M.o [6]
-  .text              ro code        0xe10    0x28  data_init.o [6]
-  .text              ro code        0xe38    0x22  fpinit_M.o [5]
-  .iar.init_table    const          0xe5c    0x14  - Linker created -
-  .text              ro code        0xe70    0x1e  cmain.o [6]
-  .text              ro code        0xe8e     0x4  low_level_init.o [4]
-  .text              ro code        0xe92     0x4  exit.o [4]
-  .text              ro code        0xe98     0xa  cexit.o [6]
-  .text              ro code        0xea4    0x14  exit.o [7]
-  .text              ro code        0xeb8    0x1c  cstartup_M.o [6]
-  Initializer bytes  const          0xed4    0x14  <for P2-1>
-  .rodata            const          0xee8    0x10  keypad.o [2]
-  .rodata            const          0xef8    0x10  main.o [1]
-  .rodata            const          0xf08    0x10  main.o [1]
-  .rodata            const          0xf18    0x10  main.o [1]
-  .rodata            const          0xf28    0x10  main.o [1]
-  .rodata            const          0xf38    0x10  main.o [1]
-  .rodata            const          0xf48    0x10  main.o [1]
-  .rodata            const          0xf58    0x10  main.o [1]
-  .rodata            const          0xf68    0x10  main.o [1]
-  .rodata            const          0xf78    0x10  main.o [1]
-  .rodata            const          0xf88    0x10  main.o [1]
-  .rodata            const          0xf98    0x10  main.o [1]
-  .rodata            const          0xfa8    0x10  main.o [1]
-  .rodata            const          0xfb8    0x10  main.o [1]
-  .rodata            const          0xfc8    0x10  main.o [1]
-  .rodata            const          0xfd8    0x10  main.o [1]
-  .rodata            const          0xfe8    0x10  main.o [1]
-  .rodata            const          0xff8    0x10  main.o [1]
-  .rodata            const         0x1008    0x10  main.o [1]
-  .rodata            const         0x1018    0x10  main.o [1]
-  .rodata            const         0x1028     0xc  main.o [1]
-  .rodata            const         0x1034     0xc  main.o [1]
-  .rodata            const         0x1040     0xc  main.o [1]
-  .rodata            const         0x104c     0xc  main.o [1]
-  .rodata            const         0x1058     0xc  main.o [1]
-  .rodata            const         0x1064     0xc  main.o [1]
-  .rodata            const         0x1070     0xc  main.o [1]
-  .rodata            const         0x107c     0xc  main.o [1]
-  .rodata            const         0x1088     0xc  main.o [1]
-  .rodata            const         0x1094     0x8  main.o [1]
-  .rodata            const         0x109c     0x8  main.o [1]
-  .rodata            const         0x10a4     0x8  main.o [1]
-  .rodata            const         0x10ac     0x8  main.o [1]
-  .rodata            const         0x10b4     0x8  main.o [1]
-  .rodata            const         0x10bc     0x0  copy_init3.o [6]
-                                 - 0x10bc  0x107c
+"P1":                                      0x10cc
+  .text              ro code         0x40   0x750  main.o [1]
+  .text              ro code        0x790   0x156  LCD.o [2]
+  .text              ro code        0x8e6    0x2a  copy_init3.o [6]
+  .text              ro code        0x910   0x1b4  keypad.o [2]
+  .text              ro code        0xac4    0x8e  Buzzer.o [2]
+  .text              ro code        0xb52     0x2  vectortrap_M.o [6]
+  .text              ro code        0xb54    0x54  Delay.o [3]
+  .text              ro code        0xba8    0xf0  ADC.o [3]
+  .text              ro code        0xc98   0x154  UART.o [3]
+  .text              ro code        0xdec    0xf4  I2C.o [3]
+  .text              ro code        0xee0    0x28  data_init.o [6]
+  .text              ro code        0xf08    0x22  fpinit_M.o [5]
+  .iar.init_table    const          0xf2c    0x14  - Linker created -
+  .text              ro code        0xf40    0x1e  cmain.o [6]
+  .text              ro code        0xf5e     0x4  low_level_init.o [4]
+  .text              ro code        0xf62     0x4  exit.o [4]
+  .text              ro code        0xf68     0xa  cexit.o [6]
+  .text              ro code        0xf74    0x14  exit.o [7]
+  .text              ro code        0xf88    0x1c  cstartup_M.o [6]
+  .rodata            const          0xfa4    0x10  keypad.o [2]
+  .rodata            const          0xfb4    0x10  main.o [1]
+  .rodata            const          0xfc4    0x10  main.o [1]
+  .rodata            const          0xfd4    0x10  main.o [1]
+  .rodata            const          0xfe4    0x10  main.o [1]
+  .rodata            const          0xff4    0x10  main.o [1]
+  .rodata            const         0x1004    0x10  main.o [1]
+  .rodata            const         0x1014    0x10  main.o [1]
+  .rodata            const         0x1024    0x10  main.o [1]
+  .rodata            const         0x1034    0x10  main.o [1]
+  .rodata            const         0x1044    0x10  main.o [1]
+  .rodata            const         0x1054    0x10  main.o [1]
+  .rodata            const         0x1064    0x10  main.o [1]
+  Initializer bytes  const         0x1074    0x10  <for P2-1>
+  .rodata            const         0x1084     0xc  main.o [1]
+  .rodata            const         0x1090     0xc  main.o [1]
+  .rodata            const         0x109c     0xc  main.o [1]
+  .rodata            const         0x10a8     0xc  main.o [1]
+  .rodata            const         0x10b4     0xc  main.o [1]
+  .rodata            const         0x10c0     0xc  main.o [1]
+  .rodata            const         0x10cc     0xc  main.o [1]
+  .rodata            const         0x10d8     0xc  main.o [1]
+  .rodata            const         0x10e4     0x8  main.o [1]
+  .rodata            const         0x10ec     0x8  main.o [1]
+  .rodata            const         0x10f4     0x8  main.o [1]
+  .rodata            const         0x10fc     0x8  main.o [1]
+  .rodata            const         0x1104     0x8  main.o [1]
+  .rodata            const         0x110c     0x0  copy_init3.o [6]
+                                 - 0x110c  0x10cc
 
-"P2", part 1 of 2:                           0x14
-  P2-1                        0x2000'0000    0x11  <Init block>
-    .data            inited   0x2000'0000    0x10  main.o [1]
-    .data            inited   0x2000'0010     0x1  main.o [1]
-                            - 0x2000'0011    0x11
+"P2", part 1 of 2:                           0x10
+  P2-1                        0x2000'0000     0xd  <Init block>
+    .data            inited   0x2000'0000     0x8  main.o [1]
+    .bss             inited   0x2000'0008     0x4  Delay.o [3]
+    .data            inited   0x2000'000c     0x1  main.o [1]
+                            - 0x2000'000d     0xd
 
 "P2", part 2 of 2:                         0x1000
-  CSTACK                      0x2000'0018  0x1000  <Block>
-    CSTACK           uninit   0x2000'0018  0x1000  <Block tail>
-                            - 0x2000'1018  0x1000
+  CSTACK                      0x2000'0010  0x1000  <Block>
+    CSTACK           uninit   0x2000'0010  0x1000  <Block tail>
+                            - 0x2000'1010  0x1000
 
 Unused ranges:
 
          From           To      Size
          ----           --      ----
-       0x10bc     0x1'ffff  0x1'ef44
-  0x2000'0014  0x2000'0017       0x4
-  0x2000'1018  0x2000'7fff    0x6fe8
+       0x110c     0x1'ffff  0x1'eef4
+  0x2000'1010  0x2000'7fff    0x6ff0
 
 
 *******************************************************************************
@@ -162,10 +156,10 @@ Unused ranges:
           Address      Size
           -------      ----
 Copy (__iar_copy_init3)
-    1 source range, total size 0x14 (117% of destination):
-                0xed4  0x14
-    1 destination range, total size 0x11:
-          0x2000'0000  0x11
+    1 source range, total size 0x10 (123% of destination):
+               0x1074  0x10
+    1 destination range, total size 0xd:
+          0x2000'0000   0xd
 
 
 
@@ -180,24 +174,24 @@ command line/config:
     Total:
 
 C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\Obj\APP: [1]
-    main.o              2'052      469       17
+    main.o              1'872      337        9
     -------------------------------------------
-    Total:              2'052      469       17
+    Total:              1'872      337        9
 
 C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\Obj\HAL: [2]
-    Buzzer.o              132
-    LCD.o                 312
-    keypad.o              268       16
+    Buzzer.o              142
+    LCD.o                 342
+    keypad.o              436       16
     -------------------------------------------
-    Total:                712       16
+    Total:                920       16
 
 C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\Obj\MCAL: [3]
-    ADC.o                 220
-    I2C.o                 172
-    SysTick.o              76
-    UART.o                260
+    ADC.o                 240
+    Delay.o                84        4        4
+    I2C.o                 244
+    UART.o                340
     -------------------------------------------
-    Total:                728
+    Total:                908        4        4
 
 dl7M_tln.a: [4]
     exit.o                  4
@@ -229,7 +223,7 @@ shb_l.a: [7]
     Gaps                    4        2
     Linker created                  23    4'096
 -----------------------------------------------
-    Grand Total:        3'774      510    4'113
+    Grand Total:        3'982      382    4'109
 
 
 *******************************************************************************
@@ -238,79 +232,85 @@ shb_l.a: [7]
 
 Entry                       Address   Size  Type      Object
 -----                       -------   ----  ----      ------
-.iar.init_table$$Base         0xe5c          --   Gb  - Linker created -
-.iar.init_table$$Limit        0xe70          --   Gb  - Linker created -
-?main                         0xe71         Code  Gb  cmain.o [6]
-ADC_Init                      0xc5d   0x86  Code  Gb  ADC.o [3]
-ADC_Read                      0xce3   0x20  Code  Gb  ADC.o [3]
-BusFault_Handler              0xe0f         Code  Wk  vectortrap_M.o [6]
-Buzzer_BeepShort              0xae5   0x12  Code  Gb  Buzzer.o [2]
-Buzzer_Init                   0xa99   0x30  Code  Gb  Buzzer.o [2]
-Buzzer_Off                    0xad7    0xe  Code  Gb  Buzzer.o [2]
-Buzzer_On                     0xac9    0xe  Code  Gb  Buzzer.o [2]
-CSTACK$$Base            0x2000'0018          --   Gb  - Linker created -
-CSTACK$$Limit           0x2000'1018          --   Gb  - Linker created -
-DebugMon_Handler              0xe0f         Code  Wk  vectortrap_M.o [6]
-HMI_ChangePassword            0x5cb   0xbe  Code  Lc  main.o [1]
-HMI_GetPasswordScreen         0x125   0xba  Code  Lc  main.o [1]
-HMI_InitialPasswordSetup
-                              0x2f1   0xf6  Code  Lc  main.o [1]
-HMI_IsInitialized             0x24f   0x30  Code  Lc  main.o [1]
-HMI_LockoutCountdown          0x1df   0x70  Code  Lc  main.o [1]
-HMI_MainMenu                  0x6f7   0x94  Code  Lc  main.o [1]
-HMI_OpenDoorFlow              0x529   0xa2  Code  Lc  main.o [1]
-HMI_ResetSystem               0x689   0x6e  Code  Lc  main.o [1]
-HMI_SetTimeoutUsingPot        0x3e7  0x142  Code  Lc  main.o [1]
-HMI_VerifyPasswordWithAttempts
-                              0x27f   0x72  Code  Lc  main.o [1]
-HardFault_Handler             0xe0f         Code  Wk  vectortrap_M.o [6]
-I2C0_Init                     0xd39   0x62  Code  Gb  I2C.o [3]
-I2C0_WriteByte                0xd9b   0x1e  Code  Gb  I2C.o [3]
-Keypad_GetKey                 0x9e7   0x7e  Code  Gb  keypad.o [2]
-Keypad_Init                   0x98d   0x5a  Code  Gb  keypad.o [2]
-Keypad_ScanOnce                0x8f   0x96  Code  Lc  main.o [1]
-Keypad_ScanOnce::keymap
-                             0x1018   0x10  Data  Lc  main.o [1]
-LCD_Clear                     0x8e7   0x12  Code  Gb  LCD.o [2]
-LCD_Init                      0x917   0x66  Code  Gb  LCD.o [2]
-LCD_PrintNumber                0x41   0x4e  Code  Lc  main.o [1]
-LCD_SendChar                  0x8c5    0xc  Code  Gb  LCD.o [2]
-LCD_SendString                0x8d1   0x16  Code  Gb  LCD.o [2]
-LCD_SetCursor                 0x8f9   0x1e  Code  Gb  LCD.o [2]
-MemManage_Handler             0xe0f         Code  Wk  vectortrap_M.o [6]
-MenuNames               0x2000'0000   0x10  Data  Lc  main.o [1]
-NMI_Handler                   0xe0f         Code  Wk  vectortrap_M.o [6]
-PendSV_Handler                0xe0f         Code  Wk  vectortrap_M.o [6]
-Region$$Table$$Base           0xe5c          --   Gb  - Linker created -
-Region$$Table$$Limit          0xe70          --   Gb  - Linker created -
-SVC_Handler                   0xe0f         Code  Wk  vectortrap_M.o [6]
-SysTick_DelayMs               0xb29   0x22  Code  Gb  SysTick.o [3]
-SysTick_Handler               0xe0f         Code  Wk  vectortrap_M.o [6]
-SysTick_Init                  0xb0d   0x1c  Code  Gb  SysTick.o [3]
-UART1_Init                    0xb59   0xaa  Code  Gb  UART.o [3]
-UART1_ReceiveByte             0xc13   0x10  Code  Gb  UART.o [3]
-UART1_SendByte                0xc03   0x10  Code  Gb  UART.o [3]
-UsageFault_Handler            0xe0f         Code  Wk  vectortrap_M.o [6]
-__cmain                       0xe71         Code  Gb  cmain.o [6]
-__exit                        0xea5   0x14  Code  Gb  exit.o [7]
-__iar_copy_init3              0xde5   0x2a  Code  Gb  copy_init3.o [6]
-__iar_data_init3              0xe11   0x28  Code  Gb  data_init.o [6]
-__iar_init_vfp                0xe39         Code  Gb  fpinit_M.o [5]
-__iar_program_start           0xeb9         Code  Gb  cstartup_M.o [6]
-__low_level_init              0xe8f    0x4  Code  Gb  low_level_init.o [4]
+.iar.init_table$$Base         0xf2c          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xf40          --   Gb  - Linker created -
+?main                         0xf41         Code  Gb  cmain.o [6]
+ADC_Init                      0xba9   0x76  Code  Gb  ADC.o [3]
+ADC_ReadTimeout               0xc1f   0x44  Code  Gb  ADC.o [3]
+BusFault_Handler              0xb53         Code  Wk  vectortrap_M.o [6]
+Buzzer_BeepShort              0xb41   0x12  Code  Gb  Buzzer.o [2]
+Buzzer_Init                   0xac5   0x48  Code  Gb  Buzzer.o [2]
+Buzzer_Off                    0xb1b    0xe  Code  Gb  Buzzer.o [2]
+Buzzer_On                     0xb0d    0xe  Code  Gb  Buzzer.o [2]
+CSTACK$$Base            0x2000'0010          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'1010          --   Gb  - Linker created -
+Control_IsInitialized         0x211   0x3a  Code  Lc  main.o [1]
+Control_LoadSavedTimeout
+                              0x24b   0x48  Code  Lc  main.o [1]
+DebugMon_Handler              0xb53         Code  Wk  vectortrap_M.o [6]
+Delay_GetTicksMs              0xb83    0x6  Code  Gb  Delay.o [3]
+Delay_Init_16MHz              0xb61   0x22  Code  Gb  Delay.o [3]
+Delay_ms                      0xb89   0x10  Code  Gb  Delay.o [3]
+HardFault_Handler             0xb53         Code  Wk  vectortrap_M.o [6]
+I2C0_Init_100k_16MHz          0xe1f   0x72  Code  Gb  I2C.o [3]
+I2C0_WaitDone                 0xded   0x32  Code  Lc  I2C.o [3]
+I2C0_WriteByte                0xe91   0x1e  Code  Gb  I2C.o [3]
+InitialPasswordSetup          0x337  0x126  Code  Lc  main.o [1]
+Keypad_DriveRowLow            0x91f   0x1e  Code  Lc  keypad.o [2]
+Keypad_GetKey                 0xa71   0x18  Code  Gb  keypad.o [2]
+Keypad_GetKeyTimeout          0xa89   0x3c  Code  Gb  keypad.o [2]
+Keypad_Init                   0x9b7   0x84  Code  Gb  keypad.o [2]
+Keypad_ScanOnce               0x93d   0x7a  Code  Lc  keypad.o [2]
+Keypad_SetAllRowsHigh         0x911    0xe  Code  Lc  keypad.o [2]
+LCD_Clear                     0x851   0x10  Code  Gb  LCD.o [2]
+LCD_Init                      0x87f   0x68  Code  Gb  LCD.o [2]
+LCD_PrintNumber                0x41   0x62  Code  Lc  main.o [1]
+LCD_SendByte                  0x7ef   0x24  Code  Lc  LCD.o [2]
+LCD_SendChar                  0x825   0x12  Code  Gb  LCD.o [2]
+LCD_SendCmd                   0x813   0x12  Code  Lc  LCD.o [2]
+LCD_SendString                0x837   0x1a  Code  Gb  LCD.o [2]
+LCD_SetCursor                 0x861   0x1e  Code  Gb  LCD.o [2]
+LCD_Strobe                    0x7a1   0x26  Code  Lc  LCD.o [2]
+LCD_WriteExpander             0x791   0x10  Code  Lc  LCD.o [2]
+LCD_WriteNibble               0x7c7   0x28  Code  Lc  LCD.o [2]
+Lockout_Countdown             0x15d   0x70  Code  Lc  main.o [1]
+MainMenu                      0x681   0x70  Code  Lc  main.o [1]
+MemManage_Handler             0xb53         Code  Wk  vectortrap_M.o [6]
+MenuNames               0x2000'0000    0x8  Data  Lc  main.o [1]
+NMI_Handler                   0xb53         Code  Wk  vectortrap_M.o [6]
+OpenDoorFlow                  0x5d7   0xaa  Code  Lc  main.o [1]
+Password_ReadScreen            0xa3   0xba  Code  Lc  main.o [1]
+PendSV_Handler                0xb53         Code  Wk  vectortrap_M.o [6]
+Pot_ReadTimeoutSeconds        0x1cd   0x44  Code  Lc  main.o [1]
+Region$$Table$$Base           0xf2c          --   Gb  - Linker created -
+Region$$Table$$Limit          0xf40          --   Gb  - Linker created -
+SVC_Handler                   0xb53         Code  Wk  vectortrap_M.o [6]
+SetTimeoutUsingPot            0x45d  0x17a  Code  Lc  main.o [1]
+SysTick_Handler               0xb55    0xc  Code  Gb  Delay.o [3]
+UART1_FlushRx                 0xda7   0x10  Code  Gb  UART.o [3]
+UART1_Init                    0xcd9   0x8a  Code  Gb  UART.o [3]
+UART1_ReceiveByteTimeout
+                              0xd73   0x34  Code  Gb  UART.o [3]
+UART1_SendByte                0xd63   0x10  Code  Gb  UART.o [3]
+UART1_SetBaudRate             0xc99   0x40  Code  Lc  UART.o [3]
+UsageFault_Handler            0xb53         Code  Wk  vectortrap_M.o [6]
+VerifyPassword_WithAttempts
+                              0x293   0xa4  Code  Lc  main.o [1]
+__cmain                       0xf41         Code  Gb  cmain.o [6]
+__exit                        0xf75   0x14  Code  Gb  exit.o [7]
+__iar_copy_init3              0x8e7   0x2a  Code  Gb  copy_init3.o [6]
+__iar_data_init3              0xee1   0x28  Code  Gb  data_init.o [6]
+__iar_init_vfp                0xf09         Code  Gb  fpinit_M.o [5]
+__iar_program_start           0xf89         Code  Gb  cstartup_M.o [6]
+__low_level_init              0xf5f    0x4  Code  Gb  low_level_init.o [4]
 __vector_table                  0x0         Data  Gb  vector_table_M.o [6]
-_call_main                    0xe7d         Code  Gb  cmain.o [6]
-_exit                         0xe99         Code  Gb  cexit.o [6]
-buzzer_delay                  0xa89   0x10  Code  Lc  Buzzer.o [2]
-delay_small                   0x97d   0x10  Code  Lc  keypad.o [2]
-exit                          0xe93    0x4  Code  Gb  exit.o [4]
-g_timeout_seconds       0x2000'0010    0x1  Data  Lc  main.o [1]
-keymap                        0xee8   0x10  Data  Lc  keypad.o [2]
-lcd_delay                     0x845   0x10  Code  Lc  LCD.o [2]
-lcd_send_byte                 0x895   0x24  Code  Lc  LCD.o [2]
-lcd_send_cmd                  0x8b9    0xc  Code  Lc  LCD.o [2]
-lcd_write_nibble              0x855   0x40  Code  Lc  LCD.o [2]
-main                          0x815   0x30  Code  Gb  main.o [1]
+_call_main                    0xf4d         Code  Gb  cmain.o [6]
+_exit                         0xf69         Code  Gb  cexit.o [6]
+exit                          0xf63    0x4  Code  Gb  exit.o [4]
+g_msTicks               0x2000'0008    0x4  Data  Lc  Delay.o [3]
+g_timeout_seconds       0x2000'000c    0x1  Data  Lc  main.o [1]
+main                          0x759   0x38  Code  Gb  main.o [1]
+s_keymap                      0xfa4   0x10  Data  Lc  keypad.o [2]
 
 
 [1] = C:\Users\moham\OneDrive\Desktop\Embedded Project\Embedded-Keysystem-v22\Embedded-Keysystem\HMI_ECU\Debug\Obj\APP
@@ -321,9 +321,9 @@ main                          0x815   0x30  Code  Gb  main.o [1]
 [6] = rt7M_tl.a
 [7] = shb_l.a
 
-  3'774 bytes of readonly  code memory
-    510 bytes of readonly  data memory
-  4'113 bytes of readwrite data memory
+  3'982 bytes of readonly  code memory
+    382 bytes of readonly  data memory
+  4'109 bytes of readwrite data memory
 
 Errors: none
 Warnings: none
