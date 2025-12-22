@@ -194,7 +194,6 @@ static boolean VerifyPassword_WithAttempts(const char *title)
             UART1_SendByte((uint8)entered[i]);
         }
 
-        /* IMPORTANT: use timeout read to avoid hanging */
         if (UART1_ReceiveByteTimeout(400u, &reply) != E_OK)
         {
             LCD_Clear();
@@ -422,18 +421,130 @@ static void OpenDoorFlow(void)
     Delay_ms(MSG_MS_LONG);
 }
 
+/* ---------- NEW: Change password flow (uses Control 'N') ---------- */
+static void ChangePasswordFlow(void)
+{
+    char new1[PASSWORD_LENGTH];
+    char new2[PASSWORD_LENGTH];
+    uint8 i;
+    boolean match;
+    uint8 reply;
+
+    if (VerifyPassword_WithAttempts("Old Password") == FALSE) { return; }
+
+    for (;;)
+    {
+        Password_ReadScreen("New Password", new1);
+        Delay_ms(250u);
+        Password_ReadScreen("Re-enter New", new2);
+
+        match = TRUE;
+        for (i = 0u; i < PASSWORD_LENGTH; i++)
+        {
+            if (new1[i] != new2[i]) { match = FALSE; break; }
+        }
+
+        if (match == FALSE)
+        {
+            LCD_Clear();
+            LCD_SetCursor(0u,0u);
+            LCD_SendString("Mismatch!");
+            Buzzer_BeepShort();
+            Delay_ms(MSG_MS_MED);
+            continue;
+        }
+
+        UART1_FlushRx();
+        UART1_SendByte((uint8)'N');
+        for (i = 0u; i < PASSWORD_LENGTH; i++)
+        {
+            UART1_SendByte((uint8)new1[i]);
+        }
+
+        if (UART1_ReceiveByteTimeout(600u, &reply) != E_OK)
+        {
+            LCD_Clear();
+            LCD_SetCursor(0u,0u);
+            LCD_SendString("No Control ECU");
+            Delay_ms(MSG_MS_MED);
+            return;
+        }
+
+        LCD_Clear();
+        LCD_SetCursor(0u,0u);
+        if (reply == (uint8)'K')
+        {
+            LCD_SendString("Pass Changed");
+        }
+        else
+        {
+            LCD_SendString("Change Error");
+        }
+        Buzzer_BeepShort();
+        Delay_ms(MSG_MS_MED);
+        return;
+    }
+}
+
+/* ---------- NEW: Reset system flow (uses Control 'R') ---------- */
+static void ResetSystemFlow(void)
+{
+    uint8 reply;
+
+    if (VerifyPassword_WithAttempts("Enter Password") == FALSE) { return; }
+
+    UART1_FlushRx();
+    UART1_SendByte((uint8)'R');
+
+    if (UART1_ReceiveByteTimeout(600u, &reply) != E_OK)
+    {
+        LCD_Clear();
+        LCD_SetCursor(0u,0u);
+        LCD_SendString("No Control ECU");
+        Delay_ms(MSG_MS_MED);
+        return;
+    }
+
+    LCD_Clear();
+    LCD_SetCursor(0u,0u);
+
+    if (reply == (uint8)'K')
+    {
+        LCD_SendString("System Reset");
+        Buzzer_On();
+        Delay_ms(150u);
+        Buzzer_Off();
+        Delay_ms(MSG_MS_SHORT);
+
+        g_timeout_seconds = 10u;
+
+        InitialPasswordSetup();
+        Control_LoadSavedTimeout();
+    }
+    else
+    {
+        LCD_SendString("Reset Error");
+        Buzzer_BeepShort();
+        Delay_ms(MSG_MS_MED);
+    }
+}
+
 /* menu */
 typedef enum
 {
     MENU_OPEN = 0,
     MENU_TIMEOUT,
+    MENU_CHANGE_PASS,
+    MENU_RESET,
     MENU_COUNT
 } MenuId;
 
 static const char *MenuNames[MENU_COUNT] =
 {
     "- Open Door",
-    "- Set Timeout"
+    "- Set Timeout",
+    "- Change Pass",
+    "- Reset System"
 };
 
 static void MainMenu(void)
@@ -458,7 +569,9 @@ static void MainMenu(void)
         else if (k == 'A')
         {
             if (selected == MENU_OPEN) { OpenDoorFlow(); }
-            else { SetTimeoutUsingPot(); }
+            else if (selected == MENU_TIMEOUT) { SetTimeoutUsingPot(); }
+            else if (selected == MENU_CHANGE_PASS) { ChangePasswordFlow(); }
+            else { ResetSystemFlow(); }
         }
         else { }
     }
